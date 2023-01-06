@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Picture {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  imageUrl      String
+  createdAt     DateTime     @default(now())
+  title         String?
+  fileName      String?
+  description   String?
+  category      CategoryName?
+}
+
+model PictureCategory {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  categoryName  CategoryName
+}
+
+enum CategoryName {
+    EVENT
+    LANDSCAPE
+}
