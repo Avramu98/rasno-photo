@@ -11,7 +11,7 @@ import useModal from '@/lib/hooks/useModal';
 import CreateModal from '@/components/elements/cms/CreateModal';
 
 export async function getServerSideProps(ctx: { res: { getHeader: (arg0: string) => any; }; }) {
-  const pictures = await axios.get('http://localhost:3000/api/pictures');
+  const pictures = await axios.get('https://rasno-ph-phtj.vercel.app//api/pictures');
   const data = pictures.data;
   const os = ctx.res.getHeader('x-os-type');
   return {
