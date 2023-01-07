@@ -44,7 +44,7 @@ const EditModal = ({ id, imageUrl, description, title, open, hide }: EditModalI)
   };
 
   const handleSubmit = async () => {
-    await axios.put('api/pictures/edit', {
+    await axios.put('api/pictures', {
       title: updatedData.title,
       description: updatedData.description,
       id: id,
