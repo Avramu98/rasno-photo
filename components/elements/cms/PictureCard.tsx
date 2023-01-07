@@ -1,5 +1,9 @@
 import * as React from 'react';
-import { Box, Card, Chip, IconButton, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Chip from '@mui/material/Chip';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 import Image from 'next/legacy/image';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,7 +15,7 @@ const testLoader = ({ src, quality }: any) => {
   return `${src}?w=250&q=${quality || 75}`;
 };
 
-export const PictureCard = ({ id, title, imageUrl, description, category }: any) => {
+const PictureCard = ({ id, title, imageUrl, description, category }: any) => {
   const { open, toggle, modalType } = useModal();
 
 
@@ -77,3 +81,5 @@ export const PictureCard = ({ id, title, imageUrl, description, category }: any)
         </Card>
   );
 };
+
+export default PictureCard;

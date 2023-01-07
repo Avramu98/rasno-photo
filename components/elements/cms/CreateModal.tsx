@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Button, Divider, IconButton, MenuItem, Select, TextField } from '@mui/material';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
 import Image from 'next/legacy/image';
 import Modal from '@/components/elements/modal';
 import EditIcon from '@mui/icons-material/Edit';
@@ -38,7 +44,6 @@ const CreateModal = ({ open, hide }: CreateModalI) => {
     category: CategoryName.EVENT,
   });
 
-  console.log(uploadData);
   const [file, setFile] = useState<File | null>(null);
   const [uploadingStatus, setUploadingStatus] = useState<string>('');
   const [uploadedFile, setUploadedFile] = useState<any>(null);

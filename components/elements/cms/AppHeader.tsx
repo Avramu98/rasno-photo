@@ -1,8 +1,12 @@
-import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 import React from 'react';
 
-export const AppHeader = () => {
+const AppHeader = () => {
   return (
         <AppBar position='static'>
             <Toolbar>
@@ -22,3 +26,5 @@ export const AppHeader = () => {
         </AppBar>
   );
 };
+
+export default AppHeader;

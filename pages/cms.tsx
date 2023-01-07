@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { Box, Button, Container, Divider } from '@mui/material';
-
-
+import dynamic from 'next/dynamic';
 import axios from 'axios';
-import { AppHeader } from '@/components/elements/cms';
-import { ModalTypeI, PictureI } from '../types';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import SwiperContainer from '@/components/elements/swiper-container';
-import useModal from '@/lib/hooks/useModal';
-import CreateModal from '@/components/elements/cms/CreateModal';
 import useSWR from 'swr';
+import useModal from '@/lib/hooks/useModal';
+
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+
+const AppHeader = dynamic(() => import('@/components/elements/cms/AppHeader'));
+const SwiperContainer = dynamic(() => import('@/components/elements/swiper-container'));
+const CreateModal = dynamic(() => import('@/components/elements/cms/CreateModal'));
+
+import { ModalTypeI, PictureI } from '../types';
 
 export async function getServerSideProps(ctx: { res: { getHeader: (arg0: string) => any; }; }) {
   // const pictures = await axios.get('/api/pictures');

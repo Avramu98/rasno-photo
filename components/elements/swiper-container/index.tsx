@@ -2,7 +2,9 @@ import React from 'react';
 import { OsTypeI, PictureI } from '../../../types';
 import { EffectCards, EffectCoverflow, Grid, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { PictureCard } from '@/components/elements/cms';
+import dynamic from 'next/dynamic';
+
+const PictureCard = dynamic(() => import('@/components/elements/cms/PictureCard'));
 
 import 'swiper/css';
 import 'swiper/css/grid';
