@@ -16,14 +16,14 @@ const CreateModal = dynamic(() => import('@/components/elements/cms/CreateModal'
 
 import { ModalTypeI, PictureI } from '../types';
 
-export async function getServerSideProps(ctx: { res: { getHeader: (arg0: string) => any; }; }) {
-  // const pictures = await axios.get('/api/pictures');
-  // const data = pictures.data;
-  const os = ctx.res.getHeader('x-os-type');
-  return {
-    props: { os },
-  };
-}
+// export async function getServerSideProps(ctx: { res: { getHeader: (arg0: string) => any; }; }) {
+//   // const pictures = await axios.get('/api/pictures');
+//   // const data = pictures.data;
+//   const os = ctx.res.getHeader('x-os-type');
+//   return {
+//     props: { os },
+//   };
+// }
 
 const fetcher = async () => {
   const data = await axios.get('./api/pictures');
@@ -37,7 +37,8 @@ export interface CmsInterface {
 }
 
 // @ts-ignore
-const Cms = ({ os }) => {
+const Cms = () => {
+  const os = 'muie';
   const { data } = useSWR('photos', fetcher);
   const events = data?.picturesData.filter((picture: PictureI) => picture.category === 'EVENT');
   const landscape = data?.picturesData.filter((picture: PictureI) => picture.category === 'LANDSCAPE');
