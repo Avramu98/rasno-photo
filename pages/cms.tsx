@@ -16,13 +16,6 @@ const CreateModal = dynamic(() => import('@/components/elements/cms/CreateModal'
 
 import { ModalTypeI, PictureI } from '../types';
 
-export async function getServerSideProps(ctx: { res: { getHeader: (arg0: string) => any; }; }) {
-  const os = ctx.res.getHeader('x-os-type');
-  return {
-    props: { os },
-  };
-}
-
 const fetcher = async () => {
   const data = await axios.get('./api/pictures');
   return {
@@ -36,6 +29,7 @@ export interface CmsInterface {
 
 // @ts-ignore
 const Cms = ({ os }) => {
+  console.log(os);
   // const os = 'muie';
   const { data } = useSWR('photos', fetcher);
   const events = data?.picturesData.filter((picture: PictureI) => picture.category === 'EVENT');
@@ -76,4 +70,14 @@ const Cms = ({ os }) => {
   );
 };
 
+Cms.getInitialProps = ({ ctx }: any) => {
+  const os = ctx?.res?.getHeader('x-os-type');
+  console.log(os);
+  ctx?.res?.removeHeader('x-os-type');
+  return {
+    os,
+  };
+};
+
 export default Cms;
+

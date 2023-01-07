@@ -9,6 +9,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-// @ts-ignore
-
-export default MyApp; 
+export default MyApp;
