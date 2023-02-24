@@ -5,7 +5,17 @@ import { prisma } from './index';
 
 export async function getPictures() {
   try {
-    const data = await prisma.picture.findMany();
+    const data = await prisma.picture.findMany({
+      select: {
+        id: true,
+        imageUrl: true,
+        createdAt: false,
+        title: true,
+        description: true,
+        category: true,
+        size: true,
+      },
+    });
     const picturesData = groupBy(data, 'category');
     return { picturesData };
   } catch (error) {

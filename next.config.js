@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    reactStrictMode: true,
+    reactStrictMode: false,
     images: {
-        domains: ['rasno-ph.s3.eu-west-3.amazonaws.com'],
+        domains: ['rasno-ph.s3.eu-west-3.amazonaws.com']
     },
     experimental: {
         optimizeCss: true,
