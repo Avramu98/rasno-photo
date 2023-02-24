@@ -17,7 +17,7 @@ export const config = {
 
 export async function uploadPictureToS3(filePath: string, fileType: string) {
   const fileParams = {
-    Bucket: process.env.BUCKET_NAME,
+    Bucket: process.env.NEXT_PUBLIC_BUCKET_NAME,
     Key: filePath,
     Expires: 600,
     ContentType: fileType,
@@ -29,7 +29,7 @@ export async function uploadPictureToS3(filePath: string, fileType: string) {
 
 export async function deletePictureFromS3(pictureName: string) {
   const fileParams = {
-    Bucket: process.env.BUCKET_NAME,
+    Bucket: process.env.NEXT_PUBLIC_BUCKET_NAME,
     Key: pictureName,
   };
     // @ts-ignore
