@@ -19,7 +19,7 @@ import { ModalI } from '../../types/misc';
 const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | 'closeModal'>) => {
   const { mutate } = useContext(CmsContext);
   const { openSnackbar } = useContext(AppContext);
-  const BUCKET_URL = 'https://rasno-ph.s3.eu-west-3.amazonaws.com/';
+  const BUCKET_URL = `https://${process.env.NEXT_PUBLIC_BUCKET_NAME}.s3.eu-west-3.amazonaws.com/`;
   const [uploadData, setUploadData] = useState<UploadDataI>({
     title: '',
     description: '',
