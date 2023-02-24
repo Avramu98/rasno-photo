@@ -1,13 +1,64 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import * as React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import createEmotionServer from '@emotion/server/create-instance';
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+import theme from 'theme';
+import createEmotionCache from 'createEmotionCache';
+import LoadingScreen from '@/components/loading/LoadingScreen';
+
+export default class MyDocument extends Document {
+  render() {
+    return (
+            <Html lang="en">
+                <Head>
+                    <meta name="theme-color" content={theme.palette.primary.main}/>
+                    <link rel="shortcut icon" href="/logo-inverted.ico"/>
+                    <meta name="emotion-insertion-point" content=""/>
+                    {/*@ts-ignore*/}
+                    {this.props.emotionStyleTags}
+                </Head>
+                <body>
+                <div id="globalLoader">
+                    <LoadingScreen/>
+                </div>
+                <Main/>
+                <NextScript/>
+                </body>
+            </Html>
+    );
+  }
 }
+
+MyDocument.getInitialProps = async (ctx) => {
+  const originalRenderPage = ctx.renderPage;
+
+  // You can consider sharing the same Emotion cache between all the SSR requests to speed up performance.
+  // However, be aware that it can have global side effects.
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
+
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: (App) =>
+        (function EnhanceApp(props) {
+          // @ts-ignore
+          return <App emotionCache={cache} {...props} />;
+        }),
+    });
+
+  const initialProps = await Document.getInitialProps(ctx);
+  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyleTags = emotionStyles.styles.map((style: { key: React.Key | null | undefined; ids: any[]; css: any; }) => (
+        <style
+            data-emotion={`${style.key} ${style.ids.join(' ')}`}
+            key={style.key}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: style.css }}
+        />
+  ));
+
+  return {
+    ...initialProps,
+    emotionStyleTags,
+  };
+};
