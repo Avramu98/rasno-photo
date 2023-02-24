@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prismaDev": "dotenv -e .env.local npx prisma db push",
+    "prismaDev": "dotenv -e .env.development npx prisma db push",
     "prismaProd": "dotenv -e .env.production npx prisma db push",
     "dev": "next dev",
     "build": "next build",
