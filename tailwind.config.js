@@ -22,6 +22,7 @@ module.exports = {
                 'primary-light': '#8ECAE6',
                 divider: '#343438',
                 secondary: '#023047',
+                background: 'linear-gradient(110.6deg, rgb(156, 116, 129) -18.3%, rgb(67, 54, 74) 16.4%, rgb(47, 48, 67) 68.2%, rgb(27, 23, 36) 99.1%)',
                 accent: '#FB8500',
                 'accent-light': '#FFB703',
             },

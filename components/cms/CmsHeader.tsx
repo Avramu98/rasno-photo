@@ -1,6 +1,8 @@
 import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { signOut } from 'next-auth/react';
 
 import { AppContext } from '@/lib/context/appContext';
 
@@ -24,6 +26,11 @@ const CmsHeader = () => {
                     aria-label='Create Picture'
                     onClick={() => openModal(ModalTypeI.CREATE)}>
                     <AddAPhotoIcon className='text-accent'/>
+                </IconButton>
+                <IconButton
+                    aria-label='SignOut'
+                    onClick={() => signOut()}>
+                    <ExitToAppIcon className='text-accent'/>
                 </IconButton>
             </Toolbar>
         </AppBar>

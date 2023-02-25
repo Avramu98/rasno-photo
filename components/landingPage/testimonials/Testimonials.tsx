@@ -8,7 +8,7 @@ import SwiperWrapper from '@/components/landingPage/testimonials/SwiperWrapper';
 
 const Testimonials = ({ testimonialRef }: any) => {
   return (
-        <Box ref={testimonialRef} className='bg-primary relative text-center py-20 flex flex-col gap-4 md:gap-12'>
+        <Box ref={testimonialRef} className='bg-background relative text-center py-20 flex flex-col gap-4 md:gap-12'>
             <Typography className='text-white text-4xl font-prompt'>Părerile unor clienți</Typography>
             <p className='text-white text-lg font-poppins max-w-5xl mx-auto p-5'>
                 Bine ai venit pe site-ul meu de portofoliu. Sunt fericit să-ți arăt munca mea și cum pot captura

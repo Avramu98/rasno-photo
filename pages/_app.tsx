@@ -6,6 +6,7 @@ import { CacheProvider } from '@emotion/react';
 import { Permanent_Marker, Poppins, Prompt } from '@next/font/google';
 import dynamic from 'next/dynamic';
 import { Analytics } from '@vercel/analytics/react';
+import { SessionProvider } from 'next-auth/react';
 
 import theme from 'theme';
 import createEmotionCache from 'createEmotionCache';
@@ -42,7 +43,7 @@ const poppins = Poppins({
 });
 
 function MyApp(props: any) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps, session } = props;
   const { contextValues } = useAppContext();
 
   useEffect(() => {
@@ -55,29 +56,33 @@ function MyApp(props: any) {
 
   return (
         <>
-            <CacheProvider value={emotionCache}>
-                <Head>
-                    <meta name="viewport" content="initial-scale=1, width=device-width"/>
-                </Head>
-                <style jsx global>
-                    {`
-                      :root {
-                        --marker-font: ${marker.style.fontFamily};
-                        --poppins-font: ${poppins.style.fontFamily};
-                        --prompt-font: ${prompt.style.fontFamily};
-                      }
-                    `}
-                </style>
-                <ThemeProvider theme={theme}>
-                    <AppContext.Provider
-                        value={{ ...contextValues }}>
-                        <CssBaseline/>
-                        <Component {...pageProps} />
-                        <Analytics/>
-                        <CustomizedSnackbars/>
-                    </AppContext.Provider>
-                </ThemeProvider>
-            </CacheProvider>
+            <SessionProvider session={session}>
+
+                <CacheProvider value={emotionCache}>
+                    <Head>
+                        <meta name="viewport" content="initial-scale=1, width=device-width"/>
+                    </Head>
+                    <style jsx global>
+                        {`
+                          :root {
+                            --marker-font: ${marker.style.fontFamily};
+                            --poppins-font: ${poppins.style.fontFamily};
+                            --prompt-font: ${prompt.style.fontFamily};
+                          }
+                        `}
+                    </style>
+                    <ThemeProvider theme={theme}>
+                        <AppContext.Provider
+                            value={{ ...contextValues }}>
+                            <CssBaseline/>
+                            <Component {...pageProps} />
+                            <Analytics/>
+                            <CustomizedSnackbars/>
+                        </AppContext.Provider>
+                    </ThemeProvider>
+                </CacheProvider>
+            </SessionProvider>
+
         </>
   );
 }
