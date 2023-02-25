@@ -3,7 +3,7 @@
 const nextConfig = {
     reactStrictMode: false,
     images: {
-        domains: ['rasno-ph.s3.eu-west-3.amazonaws.com', 'rasno-photo-prod.s3.eu-west-3.amazonaws.com']
+        domains: ['rasno-ph.s3.eu-west-3.amazonaws.com', 'rasno-photo-prod.s3.eu-west-3.amazonaws.com', 'lh3.googleusercontent.com']
     },
     experimental: {
         optimizeCss: true,

@@ -6,6 +6,7 @@ import { CacheProvider } from '@emotion/react';
 import { Permanent_Marker, Poppins, Prompt } from '@next/font/google';
 import dynamic from 'next/dynamic';
 import { Analytics } from '@vercel/analytics/react';
+import { SessionProvider } from 'next-auth/react';
 
 import theme from 'theme';
 import createEmotionCache from 'createEmotionCache';
@@ -42,7 +43,7 @@ const poppins = Poppins({
 });
 
 function MyApp(props: any) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps, session } = props;
   const { contextValues } = useAppContext();
 
   useEffect(() => {
@@ -55,6 +56,7 @@ function MyApp(props: any) {
 
   return (
         <>
+            <SessionProvider session={session}>
             <CacheProvider value={emotionCache}>
                 <Head>
                     <meta name="viewport" content="initial-scale=1, width=device-width"/>
@@ -78,6 +80,7 @@ function MyApp(props: any) {
                     </AppContext.Provider>
                 </ThemeProvider>
             </CacheProvider>
+            </SessionProvider>
         </>
   );
 }
