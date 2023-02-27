@@ -12,7 +12,7 @@ const SingleTestimonial = ({ message, name }: Omit<TestimonialItemsI, 'id'>) => 
           backgroundSize: '30%',
           backgroundRepeat: 'no-repeat',
         }}
-             className='bg-white shadow-2xl w-64 md:w-60 p-4 flex flex-col justify-between h-80 border-2 border-white'>
+             className='bg-white shadow-md w-64 md:w-60 p-4 flex flex-col justify-between h-80 border-2 border-white'>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <Typography className='font-poppins text-black italic text-sm mt-8'>" {message} "</Typography>
             <Box className='flex gap-2 justify-center'>

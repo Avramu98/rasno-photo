@@ -3,8 +3,8 @@
 
 @layer base {
     :root {
-        --color-bg-primary: radial-gradient(circle at 0% 60%, rgba(37, 190, 255, 0.9) 1%, rgba(124, 168, 197, 1) 25%, rgba(124, 168, 197, 0.8) 30%, rgba(254, 255, 255, 1) 45%);
-        --color-contrast: rgba(32, 38, 57, 1);
+        --color-bg-primary: radial-gradient(circle at 0% 60%, rgba(72,75,106, 1) 1%, rgba(147,148,165, 1) 23%, rgba(228,229,241, 1) 40%, rgba(228,229,241, 1) 50%, rgba(254, 255, 255, 1) 60%);
+        --color-contrast: black;
     }
 
     :root[class="dark"] {
