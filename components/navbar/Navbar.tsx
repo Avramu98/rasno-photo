@@ -3,6 +3,7 @@ import { motion, useCycle } from 'framer-motion';
 import Image from 'next/legacy/image';
 import { Box } from '@mui/material';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 import MobileMenu from '@/components/navbar/MobileMenu';
@@ -16,7 +17,7 @@ import {
 const Navbar = () => {
   const { isPhone } = useMobileCheck();
   const [isOpen, toggleOpen] = useCycle(false, true);
-
+  const { theme } = useTheme();
   const handleAnimation = () => {
     if (!isPhone) {
       return 'show';
@@ -33,7 +34,9 @@ const Navbar = () => {
             variants={!isPhone ? navBarAnimation : undefined}
             initial={!isPhone ? 'hidden' : undefined}
             animate={handleAnimation()}
-            className='w-full backdrop-blur-sm bg-black/40 z-50 fixed top-0 h-20 flex justify-between'>
+            className={`w-full
+            backdrop-blur-md ${theme === 'dark' ? 'bg-white' : 'bg-black'} bg-opacity-5 z-50
+            fixed top-0 h-20 flex justify-between rounded-b-2xl`}>
             <Box className='flex'>
                 {/*------LOGO-----*/}
                 <motion.div
@@ -48,7 +51,7 @@ const Navbar = () => {
                                priority={true}
                                objectFit='contain'
                                layout='fill'
-                               src={'/static/logo-inverted.png'}/>
+                               src={`${theme === 'dark' ? '/static/logo-inverted.png' : '/static/logo.png'}`}/>
                     </Box>
                 </Link>
                 </motion.div>

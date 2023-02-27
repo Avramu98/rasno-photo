@@ -48,6 +48,10 @@
         @apply transition-colors ease-in-out duration-1000
     }
 
+    .custom-button {
+        @apply font-prompt font-bold text-contrast
+    }
+
     body {
         @apply animate-theme
     }

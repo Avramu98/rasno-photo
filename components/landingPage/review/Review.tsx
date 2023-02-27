@@ -4,6 +4,7 @@ import { Button, Container, Typography } from '@mui/material';
 import Link from 'next/link';
 
 import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
+import { CustomButton } from '@/components/shared/button/CustomButton';
 
 const Review = () => {
   return (
@@ -21,12 +22,12 @@ const Review = () => {
                     din nou pentru susținere și
                     aștept cu interes să colaborăm din nou.</p>
                 <ButtonAnimationWrapper>
-                    <Button variant='outlined' className='font-prompt border-contrast text-md font-bold text-contrast'>
+                    <CustomButton variant='outlined' className='custom-button'>
                         <Link target='_blank'
                               href={'https://www.facebook.com/profile.php?id=100062974131967&sk=reviews'}>
                             Lasă un review
                         </Link>
-                    </Button>
+                    </CustomButton>
                 </ButtonAnimationWrapper>
 
                 <Typography className='text-contrast text-5xl mb-14'>Thank you! :)</Typography>
