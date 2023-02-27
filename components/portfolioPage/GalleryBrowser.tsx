@@ -40,14 +40,14 @@ const GalleryBrowser = ({
   return (
         <Container maxWidth='xl'>
             <DropAnimationHeaderWrapper>
-                <Box className='border-2 w-fit flex flex-wrap justify-center mx-auto m-8'>
+                <Box className='border-2 border-contrast w-fit flex flex-wrap justify-center mx-auto m-8'>
                     {categoriesNav.map(category => (
 
                         <Button onClick={() => handleCategoryChange(category.categoryName)} className='p-5'
                                 key={category.id}>
                             <ButtonAnimationWrapper>
                                 <Typography
-                                    className={`text-white font-prompt text-2xl ${currentDisplayedPictures.category === category.categoryName ? ' border-b-2 border-accent' : ''}`}>
+                                    className={`text-contrast font-prompt text-2xl ${currentDisplayedPictures.category === category.categoryName ? ' border-b-2 border-accent' : ''}`}>
                                     {category.title}
                                 </Typography>
                             </ButtonAnimationWrapper>

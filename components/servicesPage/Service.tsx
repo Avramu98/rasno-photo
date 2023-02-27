@@ -40,7 +40,7 @@ const Service = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
 
                 {/*-----OPTIONS HEADER-----*/}
                 <DropAnimationHeaderWrapper>
-                    <Typography className='text-center underline pt-4 pb-8 md:pb-8 font-prompt font-bold text-3xl'>
+                    <Typography className='text-center text-contrast underline pt-4 pb-8 md:pb-8 font-prompt font-bold text-3xl'>
                         {title.toUpperCase()}
                     </Typography>
                 </DropAnimationHeaderWrapper>
@@ -51,7 +51,7 @@ const Service = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
                 {optionsArr.map((option: string) => (
                     <WaterfallListAnimationWrapper key={option}>
                         <Typography
-                            className='font-poppins text-sm md:text-md lg:text-md xl:text-xl px-6 py-1'>{`${option}`}</Typography>
+                            className='font-poppins text-contrast text-sm md:text-md lg:text-md xl:text-xl px-6 py-1'>{`${option}`}</Typography>
                     </WaterfallListAnimationWrapper>
                 ))}
                 {/*-----OPTIONS DISPLAY----*/}

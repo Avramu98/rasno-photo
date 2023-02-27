@@ -45,8 +45,8 @@ const Gallery = ({ pictures }: any) => {
                                     onClick={() => handleClickedPicture(itemKey)}
                                     src={picture.imageUrl}
                                     alt="pictures"
-                                    width={picture.size?.width > 1080 ? picture.size?.width / 5 : picture.size.width}
-                                    height={picture.size?.height / 5}
+                                    width={picture.size?.width}
+                                    height={picture.size?.height}
                                     priority={true}
                                     objectFit='cover'
                                 />

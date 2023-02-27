@@ -26,7 +26,7 @@ const About = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Button variant='outlined' className='font-prompt font-bold text-white border-white'>
+                        <Button variant='outlined' className='font-prompt border-contrast font-bold text-contrast border-white'>
                             <Link href={'/contact'}>
                                 Contact
                             </Link>

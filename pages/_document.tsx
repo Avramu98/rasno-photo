@@ -2,7 +2,6 @@ import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 
-import theme from 'theme';
 import createEmotionCache from 'createEmotionCache';
 import LoadingScreen from '@/components/loading/LoadingScreen';
 
@@ -11,7 +10,7 @@ export default class MyDocument extends Document {
     return (
             <Html lang="en">
                 <Head>
-                    <meta name="theme-color" content={theme.palette.primary.main}/>
+                    <meta name="theme-color" />
                     <link rel="shortcut icon" href="/logo-inverted.ico"/>
                     <meta name="emotion-insertion-point" content=""/>
                     {/*@ts-ignore*/}

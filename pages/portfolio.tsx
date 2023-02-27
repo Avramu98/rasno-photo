@@ -24,7 +24,6 @@ export async function getStaticProps() {
 const Portfolio = ({ picturesData }: { picturesData: PictureData }) => {
   const router = useRouter();
   const { pickedCategoryFromLandingPage } = router.query;
-  console.log(process.env.DATABASE_URL);
   return (
         <div className='text-white'>
             <Head>

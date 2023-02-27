@@ -7,7 +7,7 @@ import WaterfallListAnimationWrapper from '@/components/animations/WaterfallList
 const AboutWorkflow = () => {
   return (
         <Box>
-            <Typography className='text-2xl md:text-4xl text-white text-center font-prompt font-bold p-10'>
+            <Typography className='text-2xl md:text-4xl text-contrast text-center font-prompt font-bold p-10'>
                 Workflow
             </Typography>
             <Container maxWidth='sm' className='flex flex-col gap-4'>
@@ -18,8 +18,8 @@ const AboutWorkflow = () => {
                         <WaterfallListAnimationWrapper key={step}>
                             <div className='text-left'>
                                 <Typography
-                                    className='font-poppins text-xl font-bold italic '>🔶 {stepName}</Typography>
-                                <Typography className='font-poppins text-lg '>{stepDefinition}</Typography>
+                                    className='font-poppins text-contrast text-xl font-bold italic '>🔶 {stepName}</Typography>
+                                <Typography className='font-poppins text-contrast text-lg '>{stepDefinition}</Typography>
                             </div>
                         </WaterfallListAnimationWrapper>
                   );

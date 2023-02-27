@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 import MobileMenu from '@/components/navbar/MobileMenu';
 import WebMenu from '@/components/navbar/WebMenu';
+import DarkModeToggle from '@/components/landingPage/darkModeToggle/DarkModeToggle';
 
 import {
   logoAnimation, navBarAnimation,
@@ -33,24 +34,28 @@ const Navbar = () => {
             initial={!isPhone ? 'hidden' : undefined}
             animate={handleAnimation()}
             className='w-full backdrop-blur-sm bg-black/40 z-50 fixed top-0 h-20 flex justify-between'>
-            {/*------LOGO-----*/}
-            <motion.div
+            <Box className='flex'>
+                {/*------LOGO-----*/}
+                <motion.div
                 variants={logoAnimation}
                 initial='hidden'
                 animate='show'
                 className='relative h-full w-36 '
-            >
+                 >
                 <Link href={'/'}>
                     <Box>
                         <Image alt="pictures"
                                priority={true}
                                objectFit='contain'
                                layout='fill'
-                               src='/static/logo-inverted.png'/>
+                               src={'/static/logo-inverted.png'}/>
                     </Box>
                 </Link>
-            </motion.div>
-            {/*------LOGO-----*/}
+                </motion.div>
+                {/*------LOGO-----*/}
+                <DarkModeToggle/>
+            </Box>
+
 
             {/*--------NAV ITEMS------*/}
             {isPhone ?
