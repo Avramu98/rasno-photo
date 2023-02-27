@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import React from 'react';
-import { Button, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import Link from 'next/link';
 
 import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
