@@ -19,7 +19,7 @@ const MainPage = () => {
   const testimonialRef = useRef<HTMLElement>(null);
 
   return (
-        <div className='text-white flex flex-col '>
+        <div className='transition-colors duration-1000 text-white flex flex-col '>
             <Head>
                 <title>Rasno Photograpghy</title>
                 <meta name="description"

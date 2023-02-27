@@ -20,13 +20,13 @@ const ContactColumn = ({ header, subtitle, icon }: Omit<ContactInformationI, 'id
 
   return (
         <Box
-            className='last:border-0 w-full p-4 flex flex-col justify-center items-center gap-2 border-b-2 border-black md:border-0'>
+            className='last:border-0 w-full p-4 flex flex-col justify-center items-center gap-2 border-b-2 border-contrast md:border-0'>
             <Box className='rounded-full w-20 h-20 border-2 flex justify-center items-center bg-black'>
                 {renderIcon()}
             </Box>
-            <Typography className='text-black text-3xl font-prompt italic font-bold'>{header}</Typography>
+            <Typography className='text-contrast text-3xl font-prompt italic font-bold'>{header}</Typography>
             <Typography
-                className='text-black font-prompt text-center text-xl font-light'>{subtitle}</Typography>
+                className='text-contrast font-prompt text-center text-xl font-light'>{subtitle}</Typography>
         </Box>
   );
 };

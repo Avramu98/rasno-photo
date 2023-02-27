@@ -42,8 +42,7 @@ const Login = () => {
     );
 
   if (session && session.user?.email !== process.env.NEXT_PUBLIC_ADMIN_EMAIL)
-    console.log(session);
-  return (
+    return (
             <Container maxWidth='lg' className='grid place-items-center h-screen'>
                 <Box className='flex flex-col justify-center items-center gap-10'>
                     <Typography variant='h2' className='font-poppins text-white italic'>{
@@ -66,7 +65,7 @@ const Login = () => {
                     </ButtonAnimationWrapper>
                 </Box>
             </Container>
-  );
+    );
 
 };
 

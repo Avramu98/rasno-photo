@@ -1,5 +1,19 @@
 @tailwind base;
 @tailwind components;
+
+@layer base {
+    :root {
+        --color-bg-primary: radial-gradient(circle at 0% 54%, rgba(37, 190, 255, 1) 1%, rgba(124, 168, 197, 1) 20%, rgba(176, 219, 230, 1) 40%, rgba(254, 255, 255, 1) 75%);
+        --color-contrast: rgba(32, 38, 57, 1);
+    }
+
+    :root[class="dark"] {
+        --color-bg-primary:
+                radial-gradient(circle at 0% 54%, rgba(32, 38, 57, 1) 1%, rgba(39, 32, 57, 1) 30%, rgba(17, 11, 20, 1) 50%, rgba(0, 0, 0, 1) 100%);
+        --color-contrast: white;
+    }
+}
+
 @layer components {
     .modal {
         @apply backdrop-blur-md backdrop-grayscale grid place-items-center fixed
@@ -7,7 +21,7 @@
     }
 
     .divider-edit {
-        @apply before:border-t-white after:border-t-white
+        @apply before:border-t-contrast after:border-t-contrast
     }
 
     .divider-black {
@@ -30,11 +44,18 @@
         @apply font-poppins font-bold pb-2 text-red-600 text-sm text-center absolute w-full top-0
     }
 
+    .animate-theme {
+        @apply transition-colors ease-in-out duration-1000
+    }
+
+    body {
+        @apply animate-theme
+    }
+
 }
 
-
 body {
-    background-color: #28282B;
+    background: var(--color-bg-primary);
     --swiper-navigation-color: #FB8500;
 }
 

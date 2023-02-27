@@ -8,7 +8,7 @@ const ServicePresentation = () => {
   return (
         <Box>
             <Container maxWidth='xl' className='md:[&>*:nth-child(odd)]:flex-row-reverse'>
-                <Typography className='text-4xl text-white text-center font-prompt font-bold p-12'>
+                <Typography className='text-4xl text-contrast text-center font-prompt font-bold p-12'>
                     Câteva detalii despre servicii
                 </Typography>
                 {services.map((service) => (

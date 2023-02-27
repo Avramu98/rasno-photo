@@ -10,16 +10,16 @@ import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHea
 
 const ContactInformation = () => {
   return (
-        <Box className='py-20 bg-white flex-col'>
+        <Box className='py-20 flex-col'>
             <Container maxWidth='lg'>
 
                 {/*-------HEADER----*/}
                 <DropAnimationHeaderWrapper>
-                    <Typography className='text-3xl md:text-5xl text-black text-center font-prompt font-bold pt-10'>
+                    <Typography className='text-3xl md:text-5xl text-contrast text-center font-prompt font-bold pt-10'>
                         Hai să stăm de vorbă!
                     </Typography>
                 </DropAnimationHeaderWrapper>
-                <Typography className='text-lg font-prompt text-black text-center font-poppins py-10 px-0 md:px-12'>
+                <Typography className='text-lg font-prompt text-contrast text-center font-poppins py-10 px-0 md:px-12'>
                     Povestește-mi despre viziunea ta și obiectivele tale, pot fi un partener de încredere în
                     realizarea acestora prin intermediul fotografiei.
                 </Typography>
@@ -45,14 +45,14 @@ const ContactInformation = () => {
 
                 {/*------CONTACT DATA-----*/}
 
-                <Divider className='text-accent divider-black my-5'>
+                <Divider className='text-accent divider-edit my-5'>
                     <Chip className='text-lg text-black bg-white font-prompt font-bold' label="Socials"/>
                 </Divider>
 
                 {/*------SOCIALS----*/}
                 <Box className='flex justify-center gap-4 mt-2'>
-                    <FacebookIcon className='text-black' fontSize='large'/>
-                    <InstagramIcon className='text-black' fontSize='large'/>
+                    <FacebookIcon className='text-contrast' fontSize='large'/>
+                    <InstagramIcon className='text-contrast' fontSize='large'/>
                 </Box>
                 {/*------SOCIALS----*/}
 

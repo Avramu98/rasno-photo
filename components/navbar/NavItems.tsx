@@ -16,7 +16,7 @@ const NavItem = ({ name, redirectLink }: NavItemI) => {
                 <ButtonAnimationWrapper>
                     <Typography
                         variant='h5'
-                        className={`font-prompt italic font-light ${router.pathname === redirectLink ? 'border-b-2 border-accent' : 'border-0'}`}>{name}</Typography>
+                        className={`font-prompt italic font-light text-white ${router.pathname === redirectLink ? 'border-b-2 border-accent' : 'border-0'}`}>{name}</Typography>
                 </ButtonAnimationWrapper>
             </Box>
         </Link>

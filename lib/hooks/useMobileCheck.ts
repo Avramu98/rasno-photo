@@ -22,7 +22,6 @@ export const useMobileCheck = () => {
     };
   }, []);
 
-
   useEffect(() => {
     const userAgent = window.navigator.userAgent;
     const mobileOrTabletTest = /(android|iphone|ipad|mobile)/gi;

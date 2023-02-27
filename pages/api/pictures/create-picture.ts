@@ -9,7 +9,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const data = req.body;
     const { imageUrl, title, description, category } = data;
     const imageSize = await probe(imageUrl);
-    console.log(imageSize);
     const { error } = await createPicture(imageUrl, title, description, category, imageSize);
     if (error) { // @ts-ignore
       throw new Error(error);

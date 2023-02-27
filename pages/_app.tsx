@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from 'next-themes';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import { Permanent_Marker, Poppins, Prompt } from '@next/font/google';
@@ -8,7 +8,6 @@ import dynamic from 'next/dynamic';
 import { Analytics } from '@vercel/analytics/react';
 import { SessionProvider } from 'next-auth/react';
 
-import theme from 'theme';
 import createEmotionCache from 'createEmotionCache';
 import { useAppContext } from '@/lib/hooks/useAppContext';
 // eslint-disable-next-line import/order
@@ -70,7 +69,7 @@ function MyApp(props: any) {
                       }
                     `}
                 </style>
-                <ThemeProvider theme={theme}>
+                <ThemeProvider attribute='class'>
                     <AppContext.Provider
                         value={{ ...contextValues }}>
                         <CssBaseline/>
