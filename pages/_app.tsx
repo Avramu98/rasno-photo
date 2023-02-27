@@ -69,7 +69,7 @@ function MyApp(props: any) {
                       }
                     `}
                 </style>
-                <ThemeProvider attribute='class'>
+                <ThemeProvider defaultTheme='dark' attribute='class'>
                     <AppContext.Provider
                         value={{ ...contextValues }}>
                         <CssBaseline/>
