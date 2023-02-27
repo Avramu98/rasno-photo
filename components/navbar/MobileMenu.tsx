@@ -11,7 +11,8 @@ const MobileMenu = ({ isOpen, toggleOpen }: MobileMenuI) => {
   return (
         <Fragment>
             <motion.div
-                className='absolute z-40 w-screen h-screen bg-white'
+                style={{ background: 'var(--color-bg-primary' }}
+                className='absolute z-40 w-screen h-screen border-contrast'
                 variants={sidebar}
             />
             {isOpen && <DropDownMobile/>}

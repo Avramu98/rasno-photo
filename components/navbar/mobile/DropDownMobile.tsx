@@ -3,11 +3,13 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
+import { useTheme } from 'next-themes';
 
 import MenuItemMobile from '@/components/navbar/mobile/MenuItemsMobile';
 import { navigationItems } from '@/lib/contants/landingPageContants';
 
 const DropDownMobile = () => {
+  const { theme } = useTheme();
   return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -27,7 +29,7 @@ const DropDownMobile = () => {
                                priority={true}
                                objectFit='contain'
                                layout='fill'
-                               src='/static/logo.webp'/>
+                               src={`${theme === 'dark' ? '/static/logo-inverted.png' : '/static/logo.png'}`}/>
                     </Box>
                 </Link>
             </Box>

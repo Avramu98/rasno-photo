@@ -8,9 +8,7 @@ const DarkModeToggle = () => {
   const toggleDarkMode = (checked: boolean) => {
     if (checked) return setTheme('dark');
     return setTheme('light');
-
   };
-
 
   return (
             <div className='grid place-items-center'>

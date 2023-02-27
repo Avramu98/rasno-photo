@@ -12,17 +12,17 @@ const MenuItemMobile = ({ navigationItem }: { navigationItem: NavigationItemsI }
 
   return (
         <motion.li
-            className={'w-full h-20 flex z-40 items-center justify-center border-black border-b-2'}
+            className={'w-full h-20 flex z-40 items-center justify-center border-contrast border-b-2'}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
         >
             <div className="text-placeholder w-full">
                 <Link href={navigationItem.redirectTo}>
-                    <Box className='border-2 justify-center p-2 flex'>
+                    <Box className=' justify-center p-2 flex'>
                         <Typography
                             variant='h4'
                             className={`text-center 
-                            ${isSameRoute ? 'border-l-8 border-accent text-accent' : 'border-none text-black'}
+                            ${isSameRoute ? 'border-l-8 border-accent text-accent' : 'border-none text-contrast'}
                              
                             w-full font-prompt font-bold`}>
                             {navigationItem.name}
