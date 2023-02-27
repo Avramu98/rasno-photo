@@ -17,7 +17,6 @@ const SingleTestimonial = ({ message, name }: Omit<TestimonialItemsI, 'id'>) => 
             <Typography className='font-poppins text-black italic text-sm mt-8'>" {message} "</Typography>
             <Box className='flex gap-2 justify-center'>
                 <Typography className='font-poppins text-md text-black italic'>- {name}</Typography>
-                <FacebookIcon className='text-blue-600'/>
             </Box>
         </Box>
   );
