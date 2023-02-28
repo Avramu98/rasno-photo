@@ -14,7 +14,7 @@ export const services: ServiceI[] = [
   },
   {
     id: 1,
-    title: 'Nature',
+    title: 'Natură',
     picture: '/static/nature.jpg',
     options: `
     🔶 Capturarea frumuseții și diversității naturii /
@@ -25,7 +25,7 @@ export const services: ServiceI[] = [
   },
   {
     id: 2,
-    title: 'Events',
+    title: 'Evenimente',
     picture: '/static/event.webp',
     options: `
     🔶 Capturarea momentelor cheie și a atmosferei evenimentului /

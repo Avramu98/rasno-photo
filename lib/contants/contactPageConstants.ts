@@ -10,13 +10,13 @@ export const contactInformations: ContactInformationI[] = [
   {
     id: 1,
     header: 'O vorbă?',
-    subtitle: '0722602500',
+    subtitle: '(0734) 583 628',
     icon: 'phoneIcon',
   },
   {
     id: 2,
     header: 'Un mail?',
-    subtitle: 'mail.mai@mail.com',
+    subtitle: 'rrasnoveanu@yahoo.com',
     icon: 'emailIcon',
   },
 ];

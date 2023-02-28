@@ -5,11 +5,14 @@ import { SwiperSlide } from 'swiper/react';
 import { testimonialItems } from '@/lib/contants/landingPageContants';
 import SingleTestimonial from '@/components/home/Testimonials/components/SingleTestimonial';
 import SwiperWrapper from '@/components/home/Testimonials/components/SwiperWrapper';
+import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
 
 const Testimonials = ({ testimonialRef }: any) => {
   return (
-        <Box ref={testimonialRef} className='text-center py-14 flex flex-col gap-14 '>
-            <Typography className='text-contrast text-4xl font-prompt'>Părerile unor clienți</Typography>
+        <Box ref={testimonialRef} className='text-center py-20 flex flex-col gap-14 '>
+            <DropAnimationHeaderWrapper>
+                <Typography className='header'>Părerile unor clienți</Typography>
+            </DropAnimationHeaderWrapper>
             <p className='text-contrast text-lg font-poppins max-w-5xl mx-auto p-5'>
                 Bine ai venit pe site-ul meu de portofoliu. Sunt fericit să-ți arăt munca mea și cum pot captura
                 momentele unice prin intermediul aparatului meu foto. În această secțiune, vei găși feedback-ul

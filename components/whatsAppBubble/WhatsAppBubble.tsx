@@ -9,7 +9,7 @@ const WhatsAppBubble = () => {
             chatMessage={'Salut! 🤝 \nCu ce te pot ajuta?'}
             className='z-40'
             chatboxStyle={{ color: 'black' }}
-            phoneNumber='+400722602500' accountName='Rasno'/>
+            phoneNumber='+400722602500' accountName='Râșno'/>
   );
 };
 

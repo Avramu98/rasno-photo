@@ -1,21 +1,20 @@
 import React from 'react';
-import { Box, Chip, Container, Divider, Typography } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { contactInformations } from '@/lib/contants/contactPageConstants';
 import ContactColumn from '@/components/contactPage/ContactColumn';
 import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
+import Socials from '@/components/shared/socials';
 
 const ContactInformation = () => {
   return (
-        <Box className='py-20 flex-col'>
+        <Box className='py-10 flex-col'>
             <Container maxWidth='lg'>
 
                 {/*-------HEADER----*/}
                 <DropAnimationHeaderWrapper>
-                    <Typography className='text-3xl md:text-5xl text-contrast text-center font-prompt font-bold pt-10'>
+                    <Typography className='header pt-10'>
                         Hai să stăm de vorbă!
                     </Typography>
                 </DropAnimationHeaderWrapper>
@@ -36,25 +35,14 @@ const ContactInformation = () => {
                     }}>
                     <Container
                         maxWidth='md'
-                        className=' flex flex-col lg:flex-row justify-between gap-6 lg:gap-0'>
+                        className='mb-5 flex flex-col lg:flex-row justify-between gap-6 lg:gap-0'>
                         {contactInformations.map((contact) =>
                             <ContactColumn key={contact.id} {...contact}/>,
                         )}
                     </Container>
                 </motion.div>
 
-                {/*------CONTACT DATA-----*/}
-
-                <Divider className='text-accent divider-edit my-5'>
-                    <Chip className='text-lg text-black bg-white font-prompt font-bold' label="Socials"/>
-                </Divider>
-
-                {/*------SOCIALS----*/}
-                <Box className='flex justify-center gap-4 mt-2'>
-                    <FacebookIcon className='text-contrast' fontSize='large'/>
-                    <InstagramIcon className='text-contrast' fontSize='large'/>
-                </Box>
-                {/*------SOCIALS----*/}
+                <Socials/>
 
             </Container>
         </Box>

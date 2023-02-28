@@ -16,13 +16,13 @@ const AboutMeInfo = () => {
             <Container maxWidth='lg'>
                 <Box className='flex flex-col items-center'>
                     <DropAnimationHeaderWrapper>
-                        <Typography className='text-3xl md:text-5xl text-contrast text-center font-prompt font-bold pt-10'>
+                        <Typography className='header pt-10'>
                             Hai să-ți spun mai multe despre mine.
                         </Typography>
                     </DropAnimationHeaderWrapper>
 
                     <SidesAnimationWrapper side={SideType.LEFT}>
-                        <Box className='relative mt-14 h-80 w-80 md:mt-20 md:h-96 md:w-96'>
+                        <Box style={{ overflow: 'hidden' }} className='relative mt-14 h-80 w-80 md:mt-20 md:h-96 md:w-96 shadow-2xl shadow-cyan-500/50 rounded-2xl'>
                             <Image
                                 alt="pictures"
                                    priority={true}

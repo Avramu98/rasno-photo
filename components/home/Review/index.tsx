@@ -5,14 +5,17 @@ import Link from 'next/link';
 
 import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
 import { CustomButton } from '@/components/shared/button/CustomButton';
+import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
 
 const Review = () => {
   return (
-        <Box className='text-center py-16 flex flex-col'>
-            <Container className='flex flex-col gap-8 md:gap-14 items-center' maxWidth='md'>
-                <Typography className='text-contrast text-4xl font-prompt'>
+        <Box className='text-center pb-14 flex flex-col'>
+            <Container className='flex flex-col gap-12 md:gap-14 items-center' maxWidth='md'>
+                <DropAnimationHeaderWrapper>
+                <Typography className='header'>
                     Aici poți să îți spui cuvântul
                 </Typography>
+                </DropAnimationHeaderWrapper>
                 <p className='text-contrast text-lg font-poppins'>
                     Îți mulțumesc pentru alegerea de a colabora cu mine. Sper că ai avut o
                     experiență făină și aș
@@ -30,7 +33,7 @@ const Review = () => {
                     </CustomButton>
                 </ButtonAnimationWrapper>
 
-                <Typography className='text-contrast text-5xl mb-14'>Thank you! :)</Typography>
+                <Typography className='header'>Thank you! :)</Typography>
             </Container>
         </Box>
   );
