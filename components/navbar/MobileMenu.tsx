@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { sidebar } from '@/components/navbar/animations';
@@ -8,6 +8,16 @@ import { MenuToggle } from '@/components/navbar/mobile/MenuToggle';
 import { MobileMenuI } from '../../types/misc';
 
 const MobileMenu = ({ isOpen, toggleOpen }: MobileMenuI) => {
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+  }, [isOpen]);
+
   return (
         <Fragment>
             <motion.div

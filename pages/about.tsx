@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/footer/Footer';
+import Index from '@/components/shared/footer';
 import AboutMeInfo from '@/components/aboutPage/AboutMeInfo';
 import AboutWorkflow from '@/components/aboutPage/AboutWorkflow';
 
@@ -35,7 +35,7 @@ const About = () => {
 
                 </Box>
             </Box>
-            <Footer/>
+            <Index/>
         </div>
   );
 };

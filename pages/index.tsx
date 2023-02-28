@@ -13,7 +13,7 @@ import ScrollButton from '@/components/scrollButton/ScrollButton';
 
 const Testimonials = dynamic(import('@/components/landingPage/testimonials/Testimonials'));
 const Review = dynamic(import('@/components/landingPage/review/Review'));
-const Footer = dynamic(import('@/components/footer/Footer'));
+const Footer = dynamic(import('@/components/shared/footer'));
 
 const MainPage = () => {
   const testimonialRef = useRef<HTMLElement>(null);

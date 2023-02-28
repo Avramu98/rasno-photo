@@ -33,9 +33,9 @@ export const navigationItems: NavigationItemsI[] = [
 export const categoryItems: CategoryItemsI[] = [
   {
     id: 1,
-    imageUrl: '/static/event.webp',
-    title: 'Evenimente',
-    categoryName: CategoryName.EVENTS,
+    imageUrl: '/static/session.webp',
+    title: 'Sessions',
+    categoryName: CategoryName.SESSIONS,
   },
   {
     id: 2,
@@ -51,9 +51,9 @@ export const categoryItems: CategoryItemsI[] = [
   },
   {
     id: 4,
-    imageUrl: '/static/session.webp',
-    title: 'Sessions',
-    categoryName: CategoryName.SESSIONS,
+    imageUrl: '/static/event.webp',
+    title: 'Evenimente',
+    categoryName: CategoryName.EVENTS,
   },
 ];
 

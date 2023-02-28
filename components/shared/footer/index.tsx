@@ -1,34 +1,23 @@
 import React from 'react';
 import { Box, Chip, Divider, Typography } from '@mui/material';
 import Link from 'next/link';
-import Image from 'next/legacy/image';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import { useTheme } from 'next-themes';
 
 import Mailto from '@/components/mail/MailTo';
 
-const Footer = () => {
-  const { theme } = useTheme();
+import Logo from '../logo';
+
+const Index = () => {
 
   return (
         <Box className='min-h-fit px-10 pb-4'>
             <Box className='flex flex-col items-center md:flex-row md:justify-between'>
                 {/*------LOGO-----*/}
                 <Box className='w-fit sm:mx-auto sm:mb-4 md:m-2'>
-                    <Box className='relative mt-5 h-20 w-36'>
-                        <Link href={'/'}>
-                            <Box>
-                                <Image alt="pictures"
-                                       priority={true}
-                                       objectFit='contain'
-                                       layout='fill'
-                                       src={`${theme === 'light' ? '/static/logo.png' : '/static/logo-inverted.png'}`}/>
-                            </Box>
-                        </Link>
-                    </Box>
+                    <Logo/>
                 </Box>
                 {/*------LOGO-----*/}
 
@@ -72,4 +61,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Index;
