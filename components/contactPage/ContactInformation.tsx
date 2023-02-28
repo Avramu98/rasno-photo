@@ -28,7 +28,7 @@ const ContactInformation = () => {
                 <motion.div
                     initial="hidden"
                     animate="visible"
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 1 }}
                     variants={{
                       visible: { opacity: 1, scale: 1 },
                       hidden: { opacity: 0, scale: 0 },

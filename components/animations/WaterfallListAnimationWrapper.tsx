@@ -7,7 +7,7 @@ const WaterfallListAnimationWrapper = ({ children }: { children: ReactElement })
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, duration: 1.5 }}
         >
             {children}
         </motion.div>

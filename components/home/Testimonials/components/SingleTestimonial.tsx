@@ -9,7 +9,7 @@ const SingleTestimonial = ({ message, name }: Omit<TestimonialItemsI, 'id'>) => 
       <motion.div
         // initial={{ height: 0 }}
         whileInView={{ scale: [1, 0.6, 0.6, 1, 1], borderRadius: ['20%', '20%', '50%', '50%', '20%'], rotate: [0, 0, 60, 60, 0] }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2 }}
         viewport={{ once: false }}
 
       >
