@@ -47,7 +47,8 @@ const Cms = () => {
 
   if (isLoading) return <LoadingScreen/>;
   if (status === 'authenticated' && session?.user?.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL)
-    return (
+    console.log(data);
+  return (
             <div className='bg-cms bg-cover min-h-screen'>
                 <Head>
                     <title>CMS</title>
@@ -61,8 +62,8 @@ const Cms = () => {
                 }}>
                     <CmsHeader/>
                     <Container maxWidth='xl' className="p-8">
-                        {pictureCategories.map((category: CategoryName) => {
-                          if (data?.picturesData && data?.picturesData[category]) {
+                        {pictureCategories?.map((category: CategoryName) => {
+                          if (data?.picturesData && data?.picturesData?.[category]) {
                             return (
                                     <Box key={category}>
                                         <PictureDivider categoryName={category}/>
@@ -77,7 +78,7 @@ const Cms = () => {
                     <Modal currentPicture={currentPicture}/>
                 </CmsContext.Provider>
             </div>
-    );
+  );
 };
 
 export default Cms;

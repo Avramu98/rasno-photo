@@ -6,6 +6,7 @@ import { categoriesNav } from '@/lib/contants/portfolioConstants';
 import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
 import Gallery from '@/components/portfolioPage/Gallery';
 import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
+import NoPicture from '@/components/portfolioPage/NoPicture';
 
 import { PictureData, PictureI } from '../../types/misc';
 
@@ -55,7 +56,7 @@ const GalleryBrowser = ({
                     ))}
                 </Box>
             </DropAnimationHeaderWrapper>
-            <Gallery pictures={currentDisplayedPictures?.pictures}/>
+            {currentDisplayedPictures.pictures ? <Gallery pictures={currentDisplayedPictures?.pictures}/> : <NoPicture/>}
         </Container>
 
   );
