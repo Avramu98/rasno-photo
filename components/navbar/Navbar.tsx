@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
-import Image from 'next/legacy/image';
 import { Box } from '@mui/material';
-import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 import MobileMenu from '@/components/navbar/MobileMenu';
 import WebMenu from '@/components/navbar/WebMenu';
 import DarkModeToggle from '@/components/landingPage/darkModeToggle/DarkModeToggle';
+
+import Logo from '../shared/logo';
 
 import {
   logoAnimation, navBarAnimation,
@@ -17,7 +17,18 @@ import {
 const Navbar = () => {
   const { isPhone } = useMobileCheck();
   const [isOpen, toggleOpen] = useCycle(false, true);
+
+  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className='w-full h-20 bg-opacity-5 z-50
+            fixed top-0 h-20 flex justify-between rounded-b-2xl'/>;
+  }
   const handleAnimation = () => {
     if (!isPhone) {
       return 'show';
@@ -35,7 +46,8 @@ const Navbar = () => {
             initial={!isPhone ? 'hidden' : undefined}
             animate={handleAnimation()}
             className={`w-full
-            backdrop-blur-md ${theme === 'dark' ? 'bg-white' : 'bg-black'} bg-opacity-5 z-50
+            backdrop-blur-lg ${theme === 'dark' ? 'bg-black' : 'bg-[#F8F8FF]'} 
+            bg-opacity-10 z-50
             fixed top-0 h-20 flex justify-between rounded-b-2xl`}>
             <Box className='flex'>
                 {/*------LOGO-----*/}
@@ -43,17 +55,8 @@ const Navbar = () => {
                 variants={logoAnimation}
                 initial='hidden'
                 animate='show'
-                className='relative h-full w-36 '
                  >
-                <Link href={'/'}>
-                    <Box>
-                        <Image alt="pictures"
-                               priority={true}
-                               objectFit='contain'
-                               layout='fill'
-                               src={`${theme === 'dark' ? '/static/logo-inverted.png' : '/static/logo.png'}`}/>
-                    </Box>
-                </Link>
+                <Logo/>
                 </motion.div>
                 {/*------LOGO-----*/}
                 <DarkModeToggle/>

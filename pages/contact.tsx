@@ -7,7 +7,7 @@ import Navbar from '@/components/navbar/Navbar';
 import ContactInformation from '@/components/contactPage/ContactInformation';
 
 const ContactMail = dynamic(import('@/components/contactPage/contact/ContactMail'));
-const Footer = dynamic(import('@/components/footer/Footer'));
+const Footer = dynamic(import('@/components/shared/footer'));
 const WhatsAppBubble = dynamic(import('@/components/whatsAppBubble/WhatsAppBubble'));
 
 const Contact = () => {

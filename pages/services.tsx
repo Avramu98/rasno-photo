@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Box } from '@mui/material';
 
 import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/footer/Footer';
+import Index from '@/components/shared/footer';
 import IntroductionHeader from '@/components/servicesPage/IntroductionHeader';
 import ServicePresentation from '@/components/servicesPage/ServicePresentation';
 
@@ -19,7 +19,7 @@ const Services = () => {
                 <IntroductionHeader/>
                 <ServicePresentation/>
             </Box>
-            <Footer/>
+            <Index/>
         </div>
   );
 };
