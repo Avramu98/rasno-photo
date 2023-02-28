@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
+import { CustomButton } from '@/components/shared/button/CustomButton';
 
 const Introduction = () => {
   return (
@@ -11,7 +12,7 @@ const Introduction = () => {
             <Container maxWidth='lg'>
                 <DropAnimationHeaderWrapper>
                     <Typography
-                        className='text-2xl md:text-3xl md:text-5xl text-contrast text-center font-prompt font-bold pt-10'>
+                        className='header pt-10'>
                         Dacă ai ajuns până aici înseamnă că te-am făcut curios și vrei să vezi mai multe
                     </Typography>
                 </DropAnimationHeaderWrapper>
@@ -24,11 +25,11 @@ const Introduction = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Button variant='outlined' className='border-2 font-prompt text-lg font-bold text-contrast border-contrast'>
+                        <CustomButton variant='outlined' className='custom-button'>
                             <Link href={'/about'}>
                                 Despre
                             </Link>
-                        </Button>
+                        </CustomButton>
                     </motion.div>
 
                 </Box>

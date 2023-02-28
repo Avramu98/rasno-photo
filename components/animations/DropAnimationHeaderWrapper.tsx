@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { ReactElement } from 'react';
 
+
 const DropAnimationHeaderWrapper = ({ children }: { children: ReactElement }) => {
   return (
         <motion.div

@@ -1,16 +1,17 @@
 import React from 'react';
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
+import { CustomButton } from '@/components/shared/button/CustomButton';
 
 const IntroductionHeader = () => {
   return (
         <Box className='py-20 text-center'>
-            <Container maxWidth='lg' className=''>
+            <Container maxWidth='md' className=''>
                 <DropAnimationHeaderWrapper>
-                    <Typography className='text-3xl md:text-5xl text-contrast text-center font-prompt font-bold pt-10'>
+                    <Typography className='header pt-10'>
                         Hai să-ți spun mai multe despre serviciile pe care le ofer.
                     </Typography>
                 </DropAnimationHeaderWrapper>
@@ -25,12 +26,11 @@ const IntroductionHeader = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                 >
-                    <Button variant='outlined' className='font-prompt text-contrast border-contrast font-bold'>
-
+                    <CustomButton variant='outlined' className='custom-button'>
                         <Link href={'/portfolio'}>
                             Portofoliu
                         </Link>
-                    </Button>
+                    </CustomButton>
                 </motion.div>
 
             </Container>

@@ -29,7 +29,7 @@ const SwiperWrapper = ({ children }: any) => {
               slideShadows: false,
             }}
             modules={[EffectCoverflow]}
-            className="mySwiper h-fit "
+            className="mySwiper h-fit"
         >
             {children}
         </Swiper>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -8,6 +8,7 @@ import Navbar from '@/components/navbar/Navbar';
 import Index from '@/components/shared/footer';
 import AboutMeInfo from '@/components/aboutPage/AboutMeInfo';
 import AboutWorkflow from '@/components/aboutPage/AboutWorkflow';
+import { CustomButton } from '@/components/shared/button/CustomButton';
 
 const About = () => {
   return (
@@ -26,11 +27,11 @@ const About = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Button variant='outlined' className='font-prompt border-contrast font-bold text-contrast border-white'>
+                        <CustomButton variant='outlined' className='custom-button'>
                             <Link href={'/contact'}>
                                 Contact
                             </Link>
-                        </Button>
+                        </CustomButton>
                     </motion.div>
 
                 </Box>

@@ -16,11 +16,11 @@ const Service = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
 
             {/*-------IMAGE-----*/}
             <motion.div
-                className='w-full md:w-[50%] relative' style={{ height: '400px' }}
+                className='w-full md:w-[50%] relative shadow-2xl shadow-cyan-500/50 rounded-2xl ' style={{ height: '400px', overflow: 'hidden' }}
                 initial={{ opacity: 0, x: -200 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: 'spring', damping: 50, stiffness: 100 }}
+                viewport={{ once: false }}
+                transition={{ type: 'spring', damping: 10, stiffness: 50 }}
             >
                 <Image
                     src={picture}
@@ -40,7 +40,7 @@ const Service = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
 
                 {/*-----OPTIONS HEADER-----*/}
                 <DropAnimationHeaderWrapper>
-                    <Typography className='text-center text-contrast underline pt-4 pb-8 md:pb-8 font-prompt font-bold text-3xl'>
+                    <Typography className='text-center text-contrast pt-4 pb-8 md:pb-8 font-prompt font-bold text-3xl'>
                         {title.toUpperCase()}
                     </Typography>
                 </DropAnimationHeaderWrapper>

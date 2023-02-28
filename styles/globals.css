@@ -49,7 +49,11 @@
     }
 
     .custom-button {
-        @apply font-prompt font-bold text-contrast
+        @apply font-prompt font-bold text-xl md:text-2xl text-contrast
+    }
+
+    .header {
+        @apply font-extrabold text-4xl md:text-5xl font-prompt text-contrast text-center
     }
 
     body {

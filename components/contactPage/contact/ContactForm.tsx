@@ -109,7 +109,7 @@ const ContactForm = () => {
   }, [formData.name.value, formData.email.value, formData.message.value]);
 
   return (
-        <Box className='relative bg-white border-white h-fit p-5 w-80 md:w-96'>
+        <Box className='shadow-2xl shadow-cyan-500/50 rounded-2xl relative bg-white border-white h-fit p-5 w-80 md:w-96'>
             <FormControl className='flex flex-col gap-4'>
                 <div className='form-field-wrapper'>
                     <Typography

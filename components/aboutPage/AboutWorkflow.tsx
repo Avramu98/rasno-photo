@@ -7,7 +7,7 @@ import WaterfallListAnimationWrapper from '@/components/animations/WaterfallList
 const AboutWorkflow = () => {
   return (
         <Box>
-            <Typography className='text-2xl md:text-4xl text-contrast text-center font-prompt font-bold p-10'>
+            <Typography className='header pb-10'>
                 Workflow
             </Typography>
             <Container maxWidth='sm' className='flex flex-col gap-4'>
