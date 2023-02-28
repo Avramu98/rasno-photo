@@ -16,7 +16,7 @@ const SwiperWrapper = ({ children }: any) => {
 
   return (
         <Swiper
-            style={{ margin: isPhone ? '0 0 0 -40px' : '0' }}
+            style={{ margin: isPhone ? '0 0 0 -40px' : '0', padding: '3rem 0' }}
             effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
@@ -29,7 +29,7 @@ const SwiperWrapper = ({ children }: any) => {
               slideShadows: false,
             }}
             modules={[EffectCoverflow]}
-            className="mySwiper"
+            className="mySwiper h-fit "
         >
             {children}
         </Swiper>
