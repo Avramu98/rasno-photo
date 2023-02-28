@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { SwiperSlide } from 'swiper/react';
-import { motion } from 'framer-motion';
 
 import { testimonialItems } from '@/lib/contants/landingPageContants';
 import SingleTestimonial from '@/components/home/Testimonials/components/SingleTestimonial';
