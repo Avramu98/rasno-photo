@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/legacy/image';
@@ -12,7 +12,12 @@ import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapp
 
 const CategoryPresentation = () => {
   const { isPhone } = useMobileCheck();
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
   const handleImage = (pictures:any) => {
     if (isPhone) {
       if (pictures.mobile) return pictures.mobile;
@@ -20,6 +25,10 @@ const CategoryPresentation = () => {
     } 
     return pictures.landscape;
   };
+
+  if (!mounted) {
+    return <div style={{ width:'100vw', height:'100vh' }}/>;
+  }
 
   return (
         <Swiper
