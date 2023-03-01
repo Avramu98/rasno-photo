@@ -8,7 +8,7 @@ import Mailto from '@/components/mail/MailTo';
 import Logo from '../logo';
 import Socials from '../socials';
 
-const Index = () => {
+const Footer = () => {
 
   return (
         <Box className='min-h-fit px-10 py-4 '>
@@ -40,10 +40,10 @@ const Index = () => {
 
             <Socials/>
 
-            <Typography className='font-poppins text-center text-contrast mt-3'>Copyright © 2023 RasnoPh. All rights
-                reserved</Typography>
+            <Typography className='font-poppins text-center text-contrast mt-3'>Copyright © 2023 RasnoPhoto. All rights
+                reserved. Developed by AVR Solutions</Typography>
         </Box>
   );
 };
 
-export default Index;
+export default Footer;

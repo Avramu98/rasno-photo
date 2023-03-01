@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { Box } from '@mui/material';
+import dynamic from 'next/dynamic';
 
-import Navbar from '@/components/navbar/Navbar';
-import Index from '@/components/shared/footer';
-import IntroductionHeader from '@/components/servicesPage/IntroductionHeader';
-import ServicePresentation from '@/components/servicesPage/ServicePresentation';
+import Navbar from '@/components/shared/navbar/Navbar';
+import Intro from '@/components/services/Intro';
+
+const ServicesPresentation = dynamic(import('@/components/services/ServicesPresentation'));
+const Footer = dynamic(import('@/components/shared/footer'));
 
 const Services = () => {
   return (
-        <div className='text-white'>
+        <Fragment>
             <Head>
                 <title>Services</title>
                 <meta name="description" content="Services page"/>
             </Head>
             <Box className='min-h-screen'>
                 <Navbar/>
-                <IntroductionHeader/>
-                <ServicePresentation/>
+                <Intro/>
+                <ServicesPresentation/>
             </Box>
-            <Index/>
-        </div>
+            <Footer/>
+        </Fragment>
   );
 };
 

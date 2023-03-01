@@ -1,6 +1,6 @@
 import { CategoryName } from '@prisma/client';
 
-import { CategoryItemsI, NavigationItemsI, TestimonialItemsI } from '../../types/landingPage';
+import { CategoryItemsI, NavigationItemsI, TestimonialDataI } from '../../types/landingPage';
 
 export const navigationItems: NavigationItemsI[] = [
   {
@@ -33,31 +33,41 @@ export const navigationItems: NavigationItemsI[] = [
 export const categoryItems: CategoryItemsI[] = [
   {
     id: 1,
-    imageUrl: '/static/session.webp',
+    picture: {
+      landscape: '/static/sessions-landscape.webp',
+      mobile: '/static/session-mobile.webp',
+    },
     title: 'Sessions',
     categoryName: CategoryName.SESSIONS,
   },
   {
     id: 2,
-    imageUrl: '/static/nature.jpg',
+    picture: {
+      landscape: '/static/nature-landscape.jpg',
+    },
     title: 'Natură',
     categoryName: CategoryName.NATURE,
   },
   {
     id: 3,
-    imageUrl: '/static/street.webp',
+    picture: {
+      landscape: '/static/street-landscape.webp',
+      mobile: '/static/street-mobile.webp',
+    },
     title: 'Street',
     categoryName: CategoryName.STREET,
   },
   {
     id: 4,
-    imageUrl: '/static/event.webp',
+    picture: {
+      landscape: '/static/event-landscape.webp',
+    },
     title: 'Evenimente',
     categoryName: CategoryName.EVENTS,
   },
 ];
 
-export const testimonialItems: TestimonialItemsI[] = [
+export const testimonialsData: TestimonialDataI[] = [
   {
     id: 1,
     message: 'Am lucrat împreună timp de 5 ani și încă continuăm colaborarea. Un fotograf foarte pasionat. De fiecare dată a fost foarte proactiv în legătură cu cerințele proiectului în care lucra. Foarte adaptabil, profesionist, prompt și capabil pentru volum.',

@@ -35,10 +35,6 @@ export interface AnimationWrapperI {
   side?: SideType
 }
 
-export interface ScrollBtnI {
-  specificScrollRef: RefObject<HTMLElement>
-}
-
 export interface MobileMenuI {
   isOpen: boolean
   toggleOpen: any
