@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import { NavigationItemsI } from '../../../../types/landingPage';
 
+
 const MenuItemMobile = ({ navigationItem }: { navigationItem: NavigationItemsI }) => {
   const router = useRouter();
   const isSameRoute = router.pathname === navigationItem.redirectTo;
@@ -18,7 +19,7 @@ const MenuItemMobile = ({ navigationItem }: { navigationItem: NavigationItemsI }
         >
             <div className="text-placeholder w-full">
                 <Link href={navigationItem.redirectTo}>
-                    <Box className=' justify-center p-2 flex'>
+                    <Box className='justify-center p-2 flex'>
                         <Typography
                             variant='h4'
                             className={`text-center 

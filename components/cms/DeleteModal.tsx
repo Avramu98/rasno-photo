@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Box, Button } from '@mui/material';
 import axios from 'axios';
 
-import ModalWrapper from '@/components/modal/ModalWrapper';
+import ModalWrapper from '@/components/shared/modal/ModalWrapper';
 import { CmsContext } from '@/lib/context/cmsContext';
 import { AppContext } from '@/lib/context/appContext';
 import { ModalI } from 'types/misc';

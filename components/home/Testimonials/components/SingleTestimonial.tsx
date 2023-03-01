@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-import HalfRotateAnimationWrapper from '@/components/animations/HalfRotateAnimationWrapper';
+import HalfRotateAnimationWrapper from '@/components/shared/animations/HalfRotateAnimationWrapper';
 
 import { TestimonialDataI } from '../../../../types/landingPage';
 

@@ -11,7 +11,7 @@ import Router from 'next/router';
 import useSwiperToggle from '@/lib/hooks/useSwiperToggle';
 import { CmsContext } from '@/lib/context/cmsContext';
 import { pictureCategories } from '@/lib/contants/cmsConstants';
-import LoadingScreen from '@/components/loading/LoadingScreen';
+import LoadingScreen from '@/components/shared/loading/LoadingScreen';
 import PictureDivider from '@/components/cms/PictureDivider';
 import SwiperContainer from '@/components/cms/SwiperContainer';
 import CmsHeader from '@/components/cms/CmsHeader';
@@ -21,7 +21,7 @@ import 'swiper/css';
 
 import { PictureI } from '../types/misc';
 
-const Modal = dynamic(() => import('@/components/modal/Modal'));
+const Modal = dynamic(() => import('@/components/shared/modal/Modal'));
 
 const fetcher = async () => {
   const data = await axios.get('/api/pictures/get-pictures');

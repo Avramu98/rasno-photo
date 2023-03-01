@@ -16,7 +16,7 @@ import { AppContext } from '@/lib/context/appContext';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 
-const CustomizedSnackbars = dynamic(import('@/components/snackbar/Snackbar'));
+const CustomizedSnackbars = dynamic(import('@/components/shared/snackbar/Snackbar'));
 
 const clientSideEmotionCache = createEmotionCache();
 

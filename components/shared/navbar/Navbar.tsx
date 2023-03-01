@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 import MobileMenu from '@/components/shared/navbar/MobileMenu';
 import WebMenu from '@/components/shared/navbar/WebMenu';
-import DarkModeToggle from '@/components/home/DarkModeToggle';
+import DarkModeToggle from '@/components/shared/navbar/DarkModeToggle';
 
 import Logo from '../logo';
 

@@ -13,7 +13,7 @@ const Path = (props: any) => (
 
 export const MenuToggle = ({ toggle }: { toggle: any }) => (
     <button className='z-40 top-[1.8rem] absolute right-[7vw]' onClick={toggle}>
-        <svg width="23" stroke='white' height="23" viewBox="0 0 23 23">
+        <svg width="23" height="23" viewBox="0 0 23 23">
             <Path
                 stroke='var(--color-contrast)'
                 variants={{
@@ -22,8 +22,8 @@ export const MenuToggle = ({ toggle }: { toggle: any }) => (
                 }}
             />
             <Path
-                d="M 2 9.423 L 20 9.423"
                 stroke='var(--color-contrast)'
+                d="M 2 9.423 L 20 9.423"
                 variants={{
                   closed: { opacity: 1 },
                   open: { opacity: 0 },

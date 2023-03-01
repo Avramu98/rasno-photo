@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { AnimationWrapperI } from '../../types/misc';
+import { AnimationWrapperI } from '../../../types/misc';
 
 const CtaButtonAnimationWrapper = ({ children }: AnimationWrapperI) => {
   return (
@@ -12,7 +12,8 @@ const CtaButtonAnimationWrapper = ({ children }: AnimationWrapperI) => {
             transition={{
               rotate: { velocity: 5, duration: 2 },
               scale: { duration: 0.2 },
-              opacity: { duration: 2 },
+              opacity: { duration: 1 },
+              delay: 1,
             }}
             whileInView={{ opacity:1, rotate: [20, -10, 5, 0] }}
             viewport={{ once: true }}

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 
-import { AnimationWrapperI } from '../../types/misc';
+import { AnimationWrapperI } from '../../../types/misc';
 
 const AnimateCrushFromLeft = ({ children }: AnimationWrapperI) => {
   return (

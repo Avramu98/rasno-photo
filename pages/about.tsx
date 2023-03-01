@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Head from 'next/head';
 import { Box } from '@mui/material';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
+import AboutMeInfo from '@/components/about/Info';
 import Navbar from '@/components/shared/navbar/Navbar';
-import Footer from '@/components/shared/footer';
-import AboutMeInfo from '@/components/aboutPage/AboutMeInfo';
-import AboutWorkflow from '@/components/aboutPage/AboutWorkflow';
-import { CustomButton } from '@/components/shared/button/CustomButton';
+
+const AboutWorkflow = dynamic(import('@/components/about/Workflow'));
+const Footer = dynamic(import('@/components/shared/footer'));
 
 const About = () => {
   return (
-        <div className='text-white'>
+        <Fragment>
             <Head>
                 <title>About</title>
                 <meta name="description" content="About page"/>
@@ -21,23 +20,9 @@ const About = () => {
                 <Navbar/>
                 <AboutMeInfo/>
                 <AboutWorkflow/>
-
-                <Box className='flex justify-center pt-10'>
-                    <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                    >
-                        <CustomButton variant='outlined' className='custom-button'>
-                            <Link href={'/contact'}>
-                                Contact
-                            </Link>
-                        </CustomButton>
-                    </motion.div>
-
-                </Box>
             </Box>
             <Footer/>
-        </div>
+        </Fragment>
   );
 };
 

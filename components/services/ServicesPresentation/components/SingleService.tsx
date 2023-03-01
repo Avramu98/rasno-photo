@@ -4,8 +4,8 @@ import Image from 'next/legacy/image';
 
 import { ServiceI } from 'types/servicePage';
 import { blurDataURL } from '@/lib/contants/cmsConstants';
-import WaterfallListAnimationWrapper from '@/components/animations/WaterfallListAnimationWrapper';
-import AnimateCrushFromLeft from '@/components/animations/AnimateCrushFromLeft';
+import WaterfallListAnimationWrapper from '@/components/shared/animations/WaterfallListAnimationWrapper';
+import AnimateCrushFromLeft from '@/components/shared/animations/AnimateCrushFromLeft';
 
 const SingleService = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
   const optionsArr = options.split('/');
@@ -38,17 +38,20 @@ const SingleService = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
             <Box className='w-full md:w-1/2' style={{ height: '400px' }}>
 
                 {/*-----OPTIONS HEADER-----*/}
-                    <Typography className='text-center text-contrast pt-4 pb-8 md:pb-8 font-prompt font-bold text-3xl'>
+                {/*//TODO FIX THIS*/}
+                <WaterfallListAnimationWrapper>
+                <Typography className='text-center text-contrast pt-4 pb-8 md:pb-8 font-prompt font-bold text-3xl'>
                         {title.toUpperCase()}
-                    </Typography>
+                </Typography>
                 {/*-----OPTIONS HEADER-----*/}
                 {/*-----OPTIONS DISPLAY----*/}
                 {optionsArr.map((option: string) => (
-                    <WaterfallListAnimationWrapper key={option}>
                         <Typography
+                            key={option}
                             className='font-poppins text-contrast text-sm md:text-md lg:text-md xl:text-xl px-6 py-1'>{`${option}`}</Typography>
-                    </WaterfallListAnimationWrapper>
                 ))}
+                </WaterfallListAnimationWrapper>
+
                 {/*-----OPTIONS DISPLAY----*/}
             </Box>
             {/*------OPTIONS DETAILS------*/}

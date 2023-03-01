@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
+import ButtonAnimationWrapper from '@/components/shared/animations/ButtonAnimationWrapper';
 
 import { NavItemI } from '../../../types/landingPage';
 

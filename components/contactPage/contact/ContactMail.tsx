@@ -1,14 +1,17 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 import ContactForm from '@/components/contactPage/contact/ContactForm';
+import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSubheader';
 
 const ContactMail = () => {
   return (
-        <Container maxWidth='sm' className='mb-20 z-40 flex flex-col items-center'>
-            <Typography className='font-prompt text-2xl text-center text-contrast pb-10'>Poți să îmi trimiți un mail direct din
-                formularul de mai jos și putem lua legătură acolo.</Typography>
+        <Container maxWidth='sm' >
+            <Box className='container py-0 items-center'>
+            <AnimatedSubheader text='Poți să îmi trimiți un mail direct din
+                formularul de mai jos și putem lua legătură acolo.'/>
             <ContactForm/>
+            </Box>
         </Container>
   );
 };

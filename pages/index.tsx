@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 import dynamic from 'next/dynamic';
 
 import Navbar from '@/components/shared/navbar/Navbar';
-import ScrollButton from '@/components/scrollButton/ScrollButton';
+import ScrollButton from '@/components/home/CategoryPresentation/components/ScrollButton';
 import CategoryPresentation from '@/components/home/CategoryPresentation';
 
 const Testimonials = dynamic(import('@/components/home/Testimonials'));

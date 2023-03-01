@@ -10,7 +10,7 @@ import { send } from '@emailjs/browser';
 import { CssTextField } from '@/components/contactPage/contact/CustomTextField';
 import { FormDataI, FormFieldType, formInitialState } from 'types/contactPage';
 import { AppContext } from '@/lib/context/appContext';
-import OverlayLoader from '@/components/loading/OverlayLoader';
+import OverlayLoader from '@/components/shared/loading/OverlayLoader';
 
 import { SnackbarTypeI } from '../../../types/context';
 

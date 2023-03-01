@@ -12,15 +12,16 @@ export const categoriesNav: CategoriesNavI[] = [
     title: 'Toate',
     categoryName: 'allCategories',
   },
+
   {
     id: 1,
-    title: 'Evenimente',
-    categoryName: CategoryName.EVENTS,
+    title: 'Natură',
+    categoryName: CategoryName.NATURE,
   },
   {
     id: 2,
-    title: 'Natură',
-    categoryName: CategoryName.NATURE,
+    title: 'Evenimente',
+    categoryName: CategoryName.EVENTS,
   },
   {
     id: 3,

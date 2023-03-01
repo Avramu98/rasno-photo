@@ -7,7 +7,7 @@ import axios from 'axios';
 import { CategoryName } from '@prisma/client';
 
 import { ModalI, PictureI } from 'types/misc';
-import ModalWrapper from '@/components/modal/ModalWrapper';
+import ModalWrapper from '@/components/shared/modal/ModalWrapper';
 import { blurDataURL, pictureCategories } from '@/lib/contants/cmsConstants';
 import { CmsContext } from '@/lib/context/cmsContext';
 import { AppContext } from '@/lib/context/appContext';
