@@ -34,14 +34,15 @@ const Gallery = ({ pictures }: any) => {
                 <Masonry style={{ overflow: 'hidden' }} columnsCount={3} gutter='10px'>
                     {pictures?.map((picture: PictureI, itemKey: string) => {
                       return (
-                            <motion.div
-                                key={picture.id}
-                                initial={{ opacity: 0, y: -100, scale: 1.4 }}
-                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                            >
+                      // <motion.div
+                      //     key={picture.id}
+                      //     initial={{ opacity: 0, y: -100, scale: 1.4 }}
+                      //     whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      //     viewport={{ once: true }}
+                      //     transition={{ delay: 0.2 }}
+                      // >
                                 <Image
+                                    key={picture.id}
                                     onClick={() => handleClickedPicture(itemKey)}
                                     src={picture.imageUrl}
                                     alt="pictures"
@@ -50,7 +51,7 @@ const Gallery = ({ pictures }: any) => {
                                     priority={true}
                                     objectFit='cover'
                                 />
-                            </motion.div>
+                      // </motion.div>
                       );
                     })}
                 </Masonry>
