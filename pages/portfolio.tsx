@@ -2,15 +2,16 @@ import React from 'react';
 import Head from 'next/head';
 import { Box } from '@mui/material';
 import { useRouter } from 'next/router';
-
+import dynamic from 'next/dynamic';
 
 import Navbar from '@/components/shared/navbar/Navbar';
-import Footer from '@/components/shared/footer';
-import Introduction from '@/components/portfolioPage/Introduction';
-import GalleryBrowser from '@/components/portfolioPage/GalleryBrowser';
+import Intro from '@/components/portfolio/Intro';
+import Gallery from '@/components/portfolio/Gallery';
 import { getPictures } from '@/lib/prisma/pictures';
 
 import { PictureData } from '../types/misc';
+
+const Footer = dynamic(import('@/components/shared/footer'));
 
 
 export async function getStaticProps() {
@@ -32,8 +33,8 @@ const Portfolio = ({ picturesData }: { picturesData: PictureData }) => {
             </Head>
             <Box className='min-h-screen'>
                 <Navbar/>
-                <Introduction/>
-                <GalleryBrowser pickedCategoryFromLandingPage={pickedCategoryFromLandingPage}
+                <Intro/>
+                <Gallery pickedCategoryFromLandingPage={pickedCategoryFromLandingPage}
                                 picturesData={picturesData}/>
             </Box>
             <Footer/>

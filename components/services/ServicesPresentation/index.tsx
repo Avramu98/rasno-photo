@@ -9,7 +9,6 @@ import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSu
 const ServicesPresentation = () => {
   return (
             <Container maxWidth='xl'>
-                {/*<Box className='container md:[&>*:nth-child(odd)]:flex-row-reverse'>*/}
                 <Box className='container'>
                 <AnimatedHeader text='Câteva detalii despre servicii'/>
                 <AnimatedSubheader moreStyles='w-fit md:w-1/2' text='Mai jos poți vedea care sunt zonele în care m-am perfecționat. Dar nu voi refuza un challenge!'/>

@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 
-import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
+import ButtonAnimationWrapper from '@/components/shared/animations/ButtonAnimationWrapper';
 
 const Login = () => {
   const { data: session } = useSession();

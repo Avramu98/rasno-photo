@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 
 import createEmotionCache from 'createEmotionCache';
-import LoadingScreen from '@/components/loading/LoadingScreen';
+import LoadingScreen from '@/components/shared/loading/LoadingScreen';
 
 export default class MyDocument extends Document {
   render() {

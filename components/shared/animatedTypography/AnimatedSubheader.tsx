@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-import FadeInAnimationWrapper from '@/components/animations/FadeInAnimationWrapper';
+import FadeInAnimationWrapper from '@/components/shared/animations/FadeInAnimationWrapper';
 
 const AnimatedSubheader = ({ text, moreStyles }: { text:string, moreStyles?: string }) => {
   return (

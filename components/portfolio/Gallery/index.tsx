@@ -3,12 +3,12 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { CategoryName } from '@prisma/client';
 
 import { categoriesNav } from '@/lib/contants/portfolioConstants';
-import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
-import Gallery from '@/components/portfolioPage/Gallery';
-import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
-import NoPicture from '@/components/portfolioPage/NoPicture';
+import DropAnimationHeaderWrapper from '@/components/shared/animations/DropAnimationHeaderWrapper';
+import ResponsiveGallery from '@/components/portfolio/Gallery/components/ResponsiveGallery';
+import ButtonAnimationWrapper from '@/components/shared/animations/ButtonAnimationWrapper';
+import PicturesMissing from '@/components/portfolio/Gallery/components/PicturesMissing';
 
-import { PictureData, PictureI } from '../../types/misc';
+import { PictureData, PictureI } from '../../../types/misc';
 
 // @ts-ignore
 const GalleryBrowser = ({
@@ -24,18 +24,8 @@ const GalleryBrowser = ({
   });
 
   const handleCategoryChange = (category: CategoryName | string) => {
-    switch (category) {
-      case CategoryName.EVENTS:
-        return setCurrentDisplayedPictures({ pictures: picturesData[CategoryName.EVENTS], category });
-      case CategoryName.NATURE:
-        return setCurrentDisplayedPictures({ pictures: picturesData[CategoryName.NATURE], category });
-      case CategoryName.SESSIONS:
-        return setCurrentDisplayedPictures({ pictures: picturesData[CategoryName.SESSIONS], category });
-      case CategoryName.STREET:
-        return setCurrentDisplayedPictures({ pictures: picturesData[CategoryName.STREET], category });
-      default:
-        setCurrentDisplayedPictures({ pictures: allPictures, category: 'allCategories' });
-    }
+    if (category === 'allCategories') return setCurrentDisplayedPictures({ pictures: allPictures, category: 'allCategories' });
+    return setCurrentDisplayedPictures({ pictures: picturesData[category], category });
   };
 
   return (
@@ -43,7 +33,6 @@ const GalleryBrowser = ({
             <DropAnimationHeaderWrapper>
                 <Box className='border-2 border-contrast w-fit flex flex-wrap justify-center mx-auto m-8'>
                     {categoriesNav.map(category => (
-
                         <Button onClick={() => handleCategoryChange(category.categoryName)} className='p-5'
                                 key={category.id}>
                             <ButtonAnimationWrapper>
@@ -56,7 +45,7 @@ const GalleryBrowser = ({
                     ))}
                 </Box>
             </DropAnimationHeaderWrapper>
-            {currentDisplayedPictures.pictures ? <Gallery pictures={currentDisplayedPictures?.pictures}/> : <NoPicture/>}
+            {currentDisplayedPictures?.pictures ? <ResponsiveGallery pictures={currentDisplayedPictures?.pictures}/> : <PicturesMissing/>}
         </Container>
 
   );

@@ -2,15 +2,15 @@ import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
 
 import { workflowSteps } from '@/lib/contants/aboutPageConstants';
-import WaterfallListAnimationWrapper from '@/components/animations/WaterfallListAnimationWrapper';
+import WaterfallListAnimationWrapper from '@/components/shared/animations/WaterfallListAnimationWrapper';
+import AnimatedCta from '@/components/shared/button/AnimatedCta';
+import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
 
 const AboutWorkflow = () => {
   return (
-        <Box>
-            <Typography className='header pb-10'>
-                Workflow
-            </Typography>
-            <Container maxWidth='sm' className='flex flex-col gap-4'>
+      <Container maxWidth='sm'>
+      <Box className='container gap-8'>
+           <AnimatedHeader text='Workflow'/>
                 {workflowSteps.map((step: string) => {
                   const stepName = step.split(':')[0];
                   const stepDefinition = step.split(':')[1];
@@ -24,8 +24,10 @@ const AboutWorkflow = () => {
                         </WaterfallListAnimationWrapper>
                   );
                 })}
-            </Container>
+                <AnimatedCta text='Contact' redirectLink='/contact'/>
         </Box>
+      </Container>
+
   );
 };
 

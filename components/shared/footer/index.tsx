@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
-import Mailto from '@/components/mail/MailTo';
+import Mailto from '@/components/shared/mail/MailTo';
 
 import Logo from '../logo';
 import Socials from '../socials';

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 import { categoryItems } from '@/lib/contants/landingPageContants';
-import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
+import ButtonAnimationWrapper from '@/components/shared/animations/ButtonAnimationWrapper';
 
 
 const CategoryPresentation = () => {

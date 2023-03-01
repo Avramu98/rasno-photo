@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MailToI } from '../../types/misc';
+import { MailToI } from '../../../types/misc';
 
 const Mailto = ({ email, subject, body, children }: MailToI) => {
   return (

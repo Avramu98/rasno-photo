@@ -1,28 +1,23 @@
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { contactInformations } from '@/lib/contants/contactPageConstants';
 import ContactColumn from '@/components/contactPage/ContactColumn';
-import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
 import Socials from '@/components/shared/socials';
+import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
+import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSubheader';
 
 const ContactInformation = () => {
   return (
-        <Box className='py-10 flex-col'>
             <Container maxWidth='lg'>
+                <Box className='container'>
 
                 {/*-------HEADER----*/}
-                <DropAnimationHeaderWrapper>
-                    <Typography className='header pt-10'>
-                        Hai să stăm de vorbă!
-                    </Typography>
-                </DropAnimationHeaderWrapper>
-                <Typography className='text-lg font-prompt text-contrast text-center font-poppins py-10 px-0 md:px-12'>
-                    Povestește-mi despre viziunea ta și obiectivele tale, pot fi un partener de încredere în
-                    realizarea acestora prin intermediul fotografiei.
-                </Typography>
-                {/*-------HEADER----*/}
+                <AnimatedHeader moreStyles='pt-10' text='Hai să stăm de vorbă!'/>
+               <AnimatedSubheader text='Povestește-mi despre viziunea ta și obiectivele tale, pot fi un partener de încredere în
+                    realizarea acestora prin intermediul fotografiei.'/>
+             
 
                 {/*------CONTACT DATA-----*/}
                 <motion.div
@@ -43,9 +38,8 @@ const ContactInformation = () => {
                 </motion.div>
 
                 <Socials/>
-
+                </Box>
             </Container>
-        </Box>
   );
 };
 

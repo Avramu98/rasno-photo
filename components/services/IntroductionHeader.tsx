@@ -3,7 +3,7 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
+import DropAnimationHeaderWrapper from '@/components/shared/animations/DropAnimationHeaderWrapper';
 
 const IntroductionHeader = () => {
   return (

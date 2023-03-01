@@ -7,7 +7,7 @@ import { CloudUpload } from '@mui/icons-material';
 import CheckIcon from '@mui/icons-material/Check';
 import { Default } from 'react-awesome-spinners';
 
-import ModalWrapper from '@/components/modal/ModalWrapper';
+import ModalWrapper from '@/components/shared/modal/ModalWrapper';
 import { pictureCategories } from '@/lib/contants/cmsConstants';
 import { CmsContext } from '@/lib/context/cmsContext';
 import { AppContext } from '@/lib/context/appContext';
