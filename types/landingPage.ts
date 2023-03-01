@@ -13,12 +13,15 @@ export interface NavItemI {
 
 export interface CategoryItemsI {
   id: number;
-  imageUrl: string;
+  picture: {
+    landscape: string;
+    mobile?:string;
+  }
   title: string;
   categoryName: CategoryName
 }
 
-export interface TestimonialItemsI {
+export interface TestimonialDataI {
   id: number;
   message: string;
   name: string;

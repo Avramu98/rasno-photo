@@ -1,28 +1,23 @@
-import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import React, { RefObject } from 'react';
+import { Box, Container } from '@mui/material';
 import { SwiperSlide } from 'swiper/react';
 
-import { testimonialItems } from '@/lib/contants/landingPageContants';
+import { testimonialsData } from '@/lib/contants/landingPageContants';
 import SingleTestimonial from '@/components/home/Testimonials/components/SingleTestimonial';
-import SwiperWrapper from '@/components/home/Testimonials/components/SwiperWrapper';
-import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
+import TestimonialsSwiperWrapper from '@/components/home/Testimonials/components/TestimonialsSwiperWrapper';
+import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
+import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSubheader';
 
-const Testimonials = ({ testimonialRef }: any) => {
+const Testimonials = ({ testimonialRef }: { testimonialRef:RefObject<HTMLElement> }) => {
   return (
-        <Box ref={testimonialRef} className='text-center py-20 flex flex-col gap-14 '>
-            <DropAnimationHeaderWrapper>
-                <Typography className='header'>Părerile unor clienți</Typography>
-            </DropAnimationHeaderWrapper>
-            <p className='text-contrast text-lg font-poppins max-w-5xl mx-auto p-5'>
-                Bine ai venit pe site-ul meu de portofoliu. Sunt fericit să-ți arăt munca mea și cum pot captura
-                momentele unice prin intermediul aparatului meu foto. În această secțiune, vei găși feedback-ul
-                clienților mei care au fost încântați de serviciile mele. Navighează și inspiră-te pentru următorul
-                tău proiect sau eveniment special.
-            </p>
-            <Box>
+        <Box ref={testimonialRef} className='container'>
+            <AnimatedHeader text='Părerile unor clienți'/>
+            <AnimatedSubheader text='Bine ai venit pe site-ul meu de portofoliu. Sunt fericit să-ți arăt munca mea și cum pot captura momentele unice prin intermediul aparatului meu foto. Mai jos poți vedea feedback-ul clienților anteriori. Navighează și inspiră-te pentru următorul tău proiect sau eveniment special.'/>
+
+            {/*------TESTIMONIALS CARDS-----*/}
                 <Container maxWidth='lg'>
-                    <SwiperWrapper>
-                        {testimonialItems.map((testimonial) => (
+                    <TestimonialsSwiperWrapper>
+                        {testimonialsData.map((testimonial) => (
                                 <SwiperSlide key={testimonial.id}>
                                     <SingleTestimonial
                                         message={testimonial.message}
@@ -30,9 +25,10 @@ const Testimonials = ({ testimonialRef }: any) => {
                                 </SwiperSlide>
                         ))
                         }
-                    </SwiperWrapper>
+                    </TestimonialsSwiperWrapper>
                 </Container>
-            </Box>
+            {/*------TESTIMONIALS CARDS-----*/}
+
         </Box>
 
   );

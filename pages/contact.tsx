@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Box } from '@mui/material';
 import dynamic from 'next/dynamic';
 
-import Navbar from '@/components/navbar/Navbar';
+import Navbar from '@/components/shared/navbar/Navbar';
 import ContactInformation from '@/components/contactPage/ContactInformation';
 
 const ContactMail = dynamic(import('@/components/contactPage/contact/ContactMail'));

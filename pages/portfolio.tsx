@@ -4,8 +4,8 @@ import { Box } from '@mui/material';
 import { useRouter } from 'next/router';
 
 
-import Navbar from '@/components/navbar/Navbar';
-import Index from '@/components/shared/footer';
+import Navbar from '@/components/shared/navbar/Navbar';
+import Footer from '@/components/shared/footer';
 import Introduction from '@/components/portfolioPage/Introduction';
 import GalleryBrowser from '@/components/portfolioPage/GalleryBrowser';
 import { getPictures } from '@/lib/prisma/pictures';
@@ -36,7 +36,7 @@ const Portfolio = ({ picturesData }: { picturesData: PictureData }) => {
                 <GalleryBrowser pickedCategoryFromLandingPage={pickedCategoryFromLandingPage}
                                 picturesData={picturesData}/>
             </Box>
-            <Index/>
+            <Footer/>
         </div>
   );
 };

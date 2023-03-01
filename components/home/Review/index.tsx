@@ -1,41 +1,21 @@
 import Box from '@mui/material/Box';
 import React from 'react';
 import { Container, Typography } from '@mui/material';
-import Link from 'next/link';
 
-import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapper';
-import { CustomButton } from '@/components/shared/button/CustomButton';
-import DropAnimationHeaderWrapper from '@/components/animations/DropAnimationHeaderWrapper';
+import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
+import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSubheader';
+import AnimatedCta from '@/components/shared/button/AnimatedCta';
 
 const Review = () => {
   return (
-        <Box className='text-center pb-14 flex flex-col'>
-            <Container className='flex flex-col gap-12 md:gap-14 items-center' maxWidth='md'>
-                <DropAnimationHeaderWrapper>
-                <Typography className='header'>
-                    Aici poți să îți spui cuvântul
-                </Typography>
-                </DropAnimationHeaderWrapper>
-                <p className='text-contrast text-lg font-poppins'>
-                    Îți mulțumesc pentru alegerea de a colabora cu mine. Sper că ai avut o
-                    experiență făină și aș
-                    dori să aud mai multe despre cum a fost. Dacă ești mulțumit de serviciile mele, mi-ar face
-                    plăcere să primesc un review de la ține. Acest lucru mă ajută să îmi îmbunătatesc serviciile și să
-                    ofer o experiență excelentă tuturor clienților mei. Poți lăsă un review pe Facebook. Îți mulțumesc
-                    din nou pentru susținere și
-                    aștept cu interes să colaborăm din nou.</p>
-                <ButtonAnimationWrapper>
-                    <CustomButton variant='outlined' className='custom-button'>
-                        <Link target='_blank'
-                              href={'https://www.facebook.com/profile.php?id=100062974131967&sk=reviews'}>
-                            Lasă un review
-                        </Link>
-                    </CustomButton>
-                </ButtonAnimationWrapper>
-
-                <Typography className='header'>Thank you! :)</Typography>
+            <Container maxWidth='md'>
+                <Box className='container'>
+                    <AnimatedHeader text='Aici poți să îți spui cuvântul'/>
+                    <AnimatedSubheader text='Mulțumesc că ai ales să colaborăm împreună și sper că a decurs totul așa cum te așteptai. Dacă ești mulțumit sau mulțumită de serviciile mele și nu este prea mare deranjul, poți să îmi lași un review pe Facebook apăsând pe butonul de mai jos,  pentru a mă ajuta să îmi îmbunătățesc serviciile și să îmi mențin clienții fericiți. Mulțumesc din nou că ai apelat la serviciile mele și ai avut încredere!'/>
+                    <AnimatedCta text='Lasă un review' redirectLink='https://www.facebook.com/profile.php?id=100062974131967&sk=reviews'/>
+                <Typography className='header py-16'>Thank you! :)</Typography>
+                </Box>
             </Container>
-        </Box>
   );
 };
 

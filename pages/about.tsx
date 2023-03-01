@@ -4,8 +4,8 @@ import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-import Navbar from '@/components/navbar/Navbar';
-import Index from '@/components/shared/footer';
+import Navbar from '@/components/shared/navbar/Navbar';
+import Footer from '@/components/shared/footer';
 import AboutMeInfo from '@/components/aboutPage/AboutMeInfo';
 import AboutWorkflow from '@/components/aboutPage/AboutWorkflow';
 import { CustomButton } from '@/components/shared/button/CustomButton';
@@ -36,7 +36,7 @@ const About = () => {
 
                 </Box>
             </Box>
-            <Index/>
+            <Footer/>
         </div>
   );
 };

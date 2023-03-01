@@ -13,6 +13,14 @@ import ButtonAnimationWrapper from '@/components/animations/ButtonAnimationWrapp
 const CategoryPresentation = () => {
   const { isPhone } = useMobileCheck();
 
+  const handleImage = (pictures:any) => {
+    if (isPhone) {
+      if (pictures.mobile) return pictures.mobile;
+      return pictures.landscape;
+    } 
+    return pictures.landscape;
+  };
+
   return (
         <Swiper
             navigation={!isPhone}
@@ -26,7 +34,7 @@ const CategoryPresentation = () => {
                     <SwiperSlide key={categoryItem.id}>
                         <div className='flex items-center h-full justify-center font-poppins'>
                             <Image
-                                src={categoryItem.imageUrl}
+                                src={handleImage(categoryItem.picture)}
                                 alt="pictures"
                                 priority={true}
                                 objectFit='cover'

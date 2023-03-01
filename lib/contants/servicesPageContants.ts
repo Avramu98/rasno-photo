@@ -4,7 +4,10 @@ export const services: ServiceI[] = [
   {
     id: 0,
     title: 'Sessions',
-    picture: '/static/session.webp',
+    picture: {
+      landscape: '/static/sessions-landscape.webp',
+      mobile: '/static/session-mobile.webp',
+    },
     options: `
     🔶 Capturarea frumuseții și personalității subiectului /
     🔶 Folosirea iluminării și compoziției pentru a crea imagini dramatice și atractive /
@@ -15,7 +18,9 @@ export const services: ServiceI[] = [
   {
     id: 1,
     title: 'Natură',
-    picture: '/static/nature.jpg',
+    picture: {
+      landscape: '/static/nature-landscape.jpg',
+    },
     options: `
     🔶 Capturarea frumuseții și diversității naturii /
 🔶 Folosirea tehnicilor de fotografiere pentru a capta detaliile și texturile naturii /
@@ -26,7 +31,9 @@ export const services: ServiceI[] = [
   {
     id: 2,
     title: 'Evenimente',
-    picture: '/static/event.webp',
+    picture: {
+      landscape: '/static/event-landscape.webp',
+    },
     options: `
     🔶 Capturarea momentelor cheie și a atmosferei evenimentului /
 🔶 Folosirea tehnicilor de fotografiere pentru a capta detaliile și acțiunea evenimentului /
@@ -37,7 +44,10 @@ export const services: ServiceI[] = [
   {
     id: 3,
     title: 'Street',
-    picture: '/static/street.webp',
+    picture: {
+      landscape: '/static/street-landscape.webp',
+      mobile: '/static/street-mobile.webp',
+    },
     options: `
    🔶 Capturarea vieții de zi cu zi și a detaliilor din jurul nostru /
 🔶 Folosirea tehnicilor de fotografiere pentru a capta acțiunea și mișcarea /

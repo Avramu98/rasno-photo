@@ -49,11 +49,27 @@
     }
 
     .custom-button {
-        @apply font-prompt font-bold text-xl md:text-2xl text-contrast
+        @apply font-prompt font-bold text-xl md:text-2xl text-contrast shadow-2xl shadow-cyan-500/50
     }
 
     .header {
-        @apply font-extrabold text-4xl md:text-5xl font-prompt text-contrast text-center
+        @apply font-extrabold text-3xl md:text-5xl font-prompt text-contrast text-center
+    }
+
+    .subheader {
+        @apply text-center text-contrast text-lg md:text-xl font-poppins max-w-5xl mx-auto p-5
+    }
+
+    .container {
+        @apply text-center py-14 flex flex-col gap-8 m-auto
+    }
+
+    .custom-shadow-lg {
+        @apply shadow-lg shadow-cyan-500/50
+    }
+
+    .custom-shadow-2xl {
+        @apply shadow-2xl shadow-cyan-500/50
     }
 
     body {
