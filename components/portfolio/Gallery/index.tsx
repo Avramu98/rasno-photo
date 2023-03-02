@@ -37,7 +37,7 @@ const GalleryBrowser = () => {
   const isLoadingInitialData = !data && !error;
   const isLoadingMore =
         isLoadingInitialData || (size > 0 && data && typeof data[size - 1] === 'undefined');
-  const isReachingEnd = !isLoadingMore && (data && data[data.length - 1]?.picturesData.length < 10);
+  const isReachingEnd = !isLoadingMore && (data && data[data.length - 1]?.picturesData.length < 1);
 
 
   return (
