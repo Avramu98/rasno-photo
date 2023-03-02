@@ -75,6 +75,7 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                 </Masonry>
 
             </ResponsiveMasonry>
+            {/*// @ts-ignore*/}
             <div className='h-10 w-full h-20' ref={lastElementRef}/>
 
             {isReachingEnd ? (
