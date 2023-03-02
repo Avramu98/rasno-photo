@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Image from 'next/legacy/image';
 import { Lightbox } from 'yet-another-react-lightbox';
@@ -8,8 +8,9 @@ import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
 
 import { PictureI } from 'types/misc';
+import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
 
-const ResponsiveGallery = ({ pictures }:any) => {
+const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures, isReachingEnd, setSize, size, isLoadingMore }:any) => {
   const [selectedPictureId, setSelectedPictureId] = useState<string | null>(null);
   const [open, setOpen] = React.useState(false);
 
@@ -24,13 +25,57 @@ const ResponsiveGallery = ({ pictures }:any) => {
     };
   });
 
+  const observer = useRef<IntersectionObserver>();
+  const lastElementRef = useRef<HTMLDivElement>();
+
+  const handleObserver = (entries: IntersectionObserverEntry[]) => {
+    const target = entries[0];
+    if (target.isIntersecting && !isLoadingMore && !isReachingEnd && !isValidating) {
+      setSize(size + 1);
+    }
+  };
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver(handleObserver, { threshold: 0.5 });
+    if (lastElementRef.current) {
+      observer.current.observe(lastElementRef.current);
+    }
+    return () => {
+      if (observer.current) {
+        observer.current.disconnect();
+      }
+    };
+  }, [lastElementRef, isValidating]);
+
+
+  if (error) return <div>Error loading pictures</div>;
+  if (isLoadingInitialData) return <div>Loading pictures...</div>;
+  
   return (
         <>
             <ResponsiveMasonry
-                columnsCountBreakPoints={{ 360: 1, 750: 2, 900: 3 }}
+                columnsCountBreakPoints={{ 360: 1, 750: 2, 900: 4 }}
             >
                 <Masonry style={{ overflow: 'hidden' }} columnsCount={3} gutter='10px'>
                     {pictures?.map((picture: PictureI, itemKey: string) => {
+                      if (pictures.length === itemKey + 1) {
+                        return (
+                              // @ts-ignore
+                              <div key={itemKey} ref={lastElementRef}>
+                                <Image
+
+                                    key={picture?.id}
+                                    onClick={() => handleClickedPicture(itemKey)}
+                                    src={picture?.imageUrl}
+                                    alt="pictures"
+                                    width={picture.size?.width / 5}
+                                    height={picture.size?.height / 5}
+                                    priority={true}
+                                    objectFit='cover'
+                                />
+                                </div>
+                        );
+                      }
                       return (
                                 <Image
                                     key={picture?.id}
@@ -45,7 +90,22 @@ const ResponsiveGallery = ({ pictures }:any) => {
                       );
                     })}
                 </Masonry>
+
             </ResponsiveMasonry>
+
+            {isReachingEnd ? (
+                <AnimatedHeader moreStyles='text-2xl' text='Din pacate ai ajuns la ultimele poze'/>
+            ) : (
+                <button
+                    onClick={() => {
+                      setSize(size + 1);
+                    }}
+                    disabled={isLoadingMore}
+                >
+                    {isLoadingMore ? 'Loading...' : 'Load more'}
+                </button>
+            )}
+
             <Lightbox
                 carousel={{
                   preload: 4,
