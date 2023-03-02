@@ -54,25 +54,16 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
   return (
         <>
             <ResponsiveMasonry
-                columnsCountBreakPoints={{ 360: 1, 750: 2, 900: 4 }}
+                className='relative'
+                columnsCountBreakPoints={{ 360: 1, 750: 2, 900: 3 }}
             >
                 <Masonry style={{ overflow: 'hidden' }} columnsCount={3} gutter='10px'>
                     {pictures?.map((picture: PictureI, itemKey: string) => {
                       if (pictures.length === itemKey + 1) {
                         return (
                               // @ts-ignore
-                              <div key={itemKey} ref={lastElementRef}>
-                                <Image
+                              <div className='w-1/2 bottom-0 left-0 h-20 absolute' key={itemKey} ref={lastElementRef}>
 
-                                    key={picture?.id}
-                                    onClick={() => handleClickedPicture(itemKey)}
-                                    src={picture?.imageUrl}
-                                    alt="pictures"
-                                    width={picture.size?.width / 5}
-                                    height={picture.size?.height / 5}
-                                    priority={true}
-                                    objectFit='cover'
-                                />
                                 </div>
                         );
                       }

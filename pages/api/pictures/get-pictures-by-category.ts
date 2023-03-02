@@ -5,7 +5,7 @@ import { getPicturesByCategory } from '@/lib/prisma/pictures';
 const handler = async (req:NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
-      const { category, page = 1, limit = 5 } = req.query;
+      const { category, page = 1, limit = 10 } = req.query;
       const { picturesData, error } = await getPicturesByCategory(page, limit, category);
       if (error) { // @ts-ignore
         throw new Error(error);
