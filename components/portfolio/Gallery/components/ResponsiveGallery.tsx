@@ -6,6 +6,7 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import 'yet-another-react-lightbox/styles.css';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import { Typography } from '@mui/material';
 
 import { PictureI } from 'types/misc';
 import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
@@ -36,7 +37,7 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
   };
 
   useEffect(() => {
-    observer.current = new IntersectionObserver(handleObserver, { threshold: 0.5 });
+    observer.current = new IntersectionObserver(handleObserver, { threshold: 0.1, rootMargin: '0px', root: null });
     if (lastElementRef.current) {
       observer.current.observe(lastElementRef.current);
     }
@@ -54,19 +55,10 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
   return (
         <>
             <ResponsiveMasonry
-                className='relative'
                 columnsCountBreakPoints={{ 360: 1, 750: 2, 900: 3 }}
             >
                 <Masonry style={{ overflow: 'hidden' }} columnsCount={3} gutter='10px'>
                     {pictures?.map((picture: PictureI, itemKey: string) => {
-                      if (pictures.length === itemKey + 1) {
-                        return (
-                              // @ts-ignore
-                              <div className='w-1/2 bottom-0 left-0 h-20 absolute' key={itemKey} ref={lastElementRef}>
-
-                                </div>
-                        );
-                      }
                       return (
                                 <Image
                                     key={picture?.id}
@@ -83,6 +75,7 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                 </Masonry>
 
             </ResponsiveMasonry>
+            <div className='h-10 w-full h-20' ref={lastElementRef}/>
 
             {isReachingEnd ? (
                 <AnimatedHeader moreStyles='text-2xl' text='Din pacate ai ajuns la ultimele poze'/>
@@ -93,7 +86,9 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                     }}
                     disabled={isLoadingMore}
                 >
-                    {isLoadingMore ? 'Loading...' : 'Load more'}
+                    <Typography className='header text-center'>
+                        {isLoadingMore ? 'Loading...' : 'Load more'}
+                    </Typography>
                 </button>
             )}
 
