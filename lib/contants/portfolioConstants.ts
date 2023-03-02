@@ -10,7 +10,7 @@ export const categoriesNav: CategoriesNavI[] = [
   {
     id: 0,
     title: 'Toate',
-    categoryName: 'allCategories',
+    categoryName: '',
   },
 
   {

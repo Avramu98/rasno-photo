@@ -23,6 +23,21 @@ export async function getPictures() {
   }
 }
 
+export async function getPicturesByCategory(page:any, limit:any, category:any) {
+  try {
+    const where = category ? { category } : {};
+    const data = await prisma.picture.findMany({
+      where,
+      skip: (page - 1) * limit,
+      take: limit,
+    });
+
+    return { picturesData: data };
+  } catch (error) {
+    return { error };
+  }
+}
+
 export async function createPicture(imageUrl: string, title: string, description: string, category: CategoryName, imageSize: any) {
   try {
     const pictureFromDb = await prisma.picture.create({
