@@ -6,7 +6,7 @@ import DropAnimationHeaderWrapper from '@/components/shared/animations/DropAnima
 const AnimatedHeader = ({ text, moreStyles }: { text:string, moreStyles?: string }) => {
   return (
         <DropAnimationHeaderWrapper>
-            <Typography className={`pt-8 header ${moreStyles}`}>
+            <Typography className={`pt-12 header ${moreStyles}`}>
                 {text}
             </Typography>
         </DropAnimationHeaderWrapper>
