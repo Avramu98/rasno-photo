@@ -12,6 +12,7 @@ import { PictureI } from 'types/misc';
 import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
 import LightboxNextJsImage from '@/components/portfolio/Gallery/components/LightboxNextJsImage';
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
+import DefaultLoader from '@/components/shared/loading/DefaultLoader';
 
 const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures, isReachingEnd, setSize, size, isLoadingMore }:any) => {
   const [selectedPictureId, setSelectedPictureId] = useState<string | null>(null);
@@ -93,9 +94,10 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                     }}
                     disabled={isLoadingMore}
                 >
-                    <Typography className='header text-center '>
-                        {isLoadingMore ? 'Loading...' : 'Load more'}
-                    </Typography>
+                    {isLoadingMore && <DefaultLoader/>}
+                    {/*<Typography className='header text-center '>*/}
+                    {/*    {isLoadingMore ? 'Loading...' : 'Load more'}*/}
+                    {/*</Typography>*/}
                 </button>
             )}
 
