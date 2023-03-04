@@ -26,7 +26,7 @@ const AboutMeInfo = () => {
                         </Box>
                     </SidesAnimationWrapper>
 
-                    <AnimatedSubheader text='Sunt Râșno, un fotograf care urmează studiile Digital Media la FSPAC. Am 5 ani de experiență în capturarea momentelor unice prin intermediul obiectivelor mele, specializându-mă în poze de party, natură, street photography si sessions. Dar in general ma pot adapta la orice. Talentat și dedicat, promit să capturez emoțiile tale prin intermediul fotografiilor mele.'/>
+                    <AnimatedSubheader text='Sunt Râșno, un fotograf care urmează studiile Digital Media la FSPAC. Am 5 ani de experiență în capturarea momentelor unice prin intermediul obiectivelor mele, specializându-mă în poze de party, natură, street photography și sessions. Dar în general mă pot adapta la orice. Talentat și dedicat, promit să capturez emoțiile tale prin intermediul fotografiilor mele.'/>
                     <CameraDetails/>
                 </Box>
             </Container>

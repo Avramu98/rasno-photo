@@ -7,7 +7,7 @@ import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSu
 const ContactMail = () => {
   return (
         <Container maxWidth='sm' >
-            <Box className='container py-0 items-center'>
+            <Box className='container mb-10 md:py-0 items-center'>
             <AnimatedSubheader text='Poți să îmi trimiți un mail direct din
                 formularul de mai jos și putem lua legătură acolo.'/>
             <ContactForm/>
