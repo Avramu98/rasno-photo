@@ -39,6 +39,10 @@ const GalleryBrowser = () => {
         isLoadingInitialData || (size > 0 && data && typeof data[size - 1] === 'undefined');
   const isReachingEnd = !isLoadingMore && (data && data[data.length - 1]?.picturesData.length < 1);
 
+  const handleSelectedCategory = (category:any) => {
+    if (category === selectedCategory) return true;
+    return false;
+  };
 
   return (
         <Container maxWidth='xl'>
@@ -49,8 +53,8 @@ const GalleryBrowser = () => {
                                 key={category.id}>
                             <ButtonAnimationWrapper>
                                 <Typography
-                                    // className={`text-contrast font-prompt text-2xl ${datea.category === category.categoryName ? ' border-b-2 border-accent' : ''}`}
-                                    className={'text-contrast font-prompt text-2xl }'}
+                                    className={`text-contrast font-prompt text-2xl ${handleSelectedCategory(category.categoryName) ? ' border-b-2 border-accent' : ''}`}
+                                    // className={'text-contrast font-prompt text-2xl }'}
                                     >
                                     {category.title}
                                 </Typography>

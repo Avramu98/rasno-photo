@@ -11,10 +11,12 @@ import { Typography } from '@mui/material';
 import { PictureI } from 'types/misc';
 import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
 import LightboxNextJsImage from '@/components/portfolio/Gallery/components/LightboxNextJsImage';
+import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 
 const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures, isReachingEnd, setSize, size, isLoadingMore }:any) => {
   const [selectedPictureId, setSelectedPictureId] = useState<string | null>(null);
   const [open, setOpen] = React.useState(false);
+  const { isPhone } = useMobileCheck();
 
   const handleClickedPicture = (selectedId: string) => {
     setSelectedPictureId(selectedId);
@@ -85,12 +87,13 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                 <AnimatedHeader moreStyles='text-2xl' text='Din pacate ai ajuns la ultimele poze'/>
             ) : (
                 <button
+                    className='w-full text-center flex justify-center'
                     onClick={() => {
                       setSize(size + 1);
                     }}
                     disabled={isLoadingMore}
                 >
-                    <Typography className='header text-center'>
+                    <Typography className='header text-center '>
                         {isLoadingMore ? 'Loading...' : 'Load more'}
                     </Typography>
                 </button>
@@ -101,7 +104,7 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                   preload: 4,
                 }}
                 index={Number(selectedPictureId)}
-                open={open}
+                open={open && !isPhone}
                 close={() => setOpen(false)}
                 slides={configuredArr}
                 render={{ slide: LightboxNextJsImage }}
