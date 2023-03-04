@@ -10,6 +10,7 @@ import { Typography } from '@mui/material';
 
 import { PictureI } from 'types/misc';
 import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
+import LightboxNextJsImage from '@/components/portfolio/Gallery/components/LightboxNextJsImage';
 
 const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures, isReachingEnd, setSize, size, isLoadingMore }:any) => {
   const [selectedPictureId, setSelectedPictureId] = useState<string | null>(null);
@@ -23,6 +24,8 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
   const configuredArr = pictures?.map((item: PictureI) => {
     return {
       src: item.imageUrl,
+      width: item.size.width,
+      height: item.size.height,
     };
   });
 
@@ -101,6 +104,7 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                 open={open}
                 close={() => setOpen(false)}
                 slides={configuredArr}
+                render={{ slide: LightboxNextJsImage }}
                 plugins={[Thumbnails, Fullscreen]}
             />
         </>

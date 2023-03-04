@@ -28,7 +28,7 @@ const GalleryBrowser = () => {
     return `/api/pictures/get-pictures-by-category?page=${pageIndex + 1}&category=${selectedCategory}`;
   };
 
-  const { data, error, size, setSize, isValidating } = useSWRInfinite(getKey, fetcher, {
+  const { data, error, size, isLoading, setSize, isValidating } = useSWRInfinite(getKey, fetcher, {
     revalidateOnFocus: false,
   });
 
@@ -60,7 +60,9 @@ const GalleryBrowser = () => {
                 </Box>
             </DropAnimationHeaderWrapper>
 
-            {picturesData && picturesData?.length > 0 ? <ResponsiveGallery error={error} isLoadingInitialData={isLoadingInitialData} isValidating={isValidating} isReachingEnd={isReachingEnd} setSize={setSize} size={size} isLoadingMore={isLoadingMore} pictures={picturesData}/> : <PicturesMissing/>}
+            {picturesData && !isLoading ?
+                <ResponsiveGallery error={error} isLoadingInitialData={isLoadingInitialData} isValidating={isValidating} isReachingEnd={isReachingEnd} setSize={setSize} size={size} isLoadingMore={isLoadingMore} pictures={picturesData}/>
+              : <PicturesMissing/>}
 
         </Container>
 
