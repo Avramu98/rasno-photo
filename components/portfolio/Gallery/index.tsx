@@ -21,8 +21,10 @@ const fetcher = async (url:string) => {
 const GalleryBrowser = () => {
   const router = useRouter();
   const { pickedCategoryFromLandingPage } = router.query;
+  //TODO FIX TYPE
   const [selectedCategory, setSelectedCategory] = useState<any>(pickedCategoryFromLandingPage || '');
 
+  //TODO FIX TYPE
   const getKey = (pageIndex:any, previousPageData:any) => {
     if (previousPageData && !previousPageData.picturesData.length) return null;
     return `/api/pictures/get-pictures-by-category?page=${pageIndex + 1}&category=${selectedCategory}`;
@@ -39,9 +41,10 @@ const GalleryBrowser = () => {
         isLoadingInitialData || (size > 0 && data && typeof data[size - 1] === 'undefined');
   const isReachingEnd = !isLoadingMore && (data && data[data.length - 1]?.picturesData.length < 1);
 
+  //TODO FIX TYPE
   const handleSelectedCategory = (category:any) => {
-    if (category === selectedCategory) return true;
-    return false;
+    return category === selectedCategory;
+
   };
 
   return (

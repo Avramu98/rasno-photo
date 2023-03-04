@@ -8,7 +8,7 @@ const DropAnimationHeaderWrapper = ({ children }: { children: ReactElement }) =>
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ type: 'spring', velocity: 5, damping: 30, delay: 0.5 }}
+            transition={{ type: 'spring', velocity: 5, damping: 30, delay: 0.2 }}
         >
             {children}
         </motion.div>

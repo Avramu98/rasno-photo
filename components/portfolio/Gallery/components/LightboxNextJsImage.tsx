@@ -3,6 +3,7 @@ import Image from 'next/image';
 import 'yet-another-react-lightbox/styles.css';
 
 
+//TODO FIX TYPE
 const LightboxNextJsImage = (image:any, offset:any, rect:any) => {
   const width = Math.round(
     Math.min(rect.width, (rect.height / image.height) * image.width),
