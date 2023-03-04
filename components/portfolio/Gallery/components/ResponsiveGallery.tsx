@@ -6,7 +6,6 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import 'yet-another-react-lightbox/styles.css';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import { Typography } from '@mui/material';
 
 import { PictureI } from 'types/misc';
 import AnimatedHeader from '@/components/shared/animatedTypography/AnimatedHeader';
@@ -95,9 +94,6 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
                     disabled={isLoadingMore}
                 >
                     {isLoadingMore && <DefaultLoader/>}
-                    {/*<Typography className='header text-center '>*/}
-                    {/*    {isLoadingMore ? 'Loading...' : 'Load more'}*/}
-                    {/*</Typography>*/}
                 </button>
             )}
 

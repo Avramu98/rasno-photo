@@ -6,11 +6,9 @@ import { ServiceI } from 'types/servicePage';
 import { blurDataURL } from '@/lib/contants/cmsConstants';
 import WaterfallListAnimationWrapper from '@/components/shared/animations/WaterfallListAnimationWrapper';
 import AnimateCrushFromLeft from '@/components/shared/animations/AnimateCrushFromLeft';
-import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
 
 const SingleService = ({ picture, title, options }: Omit<ServiceI, 'id'>) => {
   const optionsArr = options.split('/');
-  const { isPhone } = useMobileCheck();
 
   return (
         <Box className='flex md:flex-row flex-col py-4'>
