@@ -16,7 +16,7 @@ export const contactInformations: ContactInformationI[] = [
   {
     id: 2,
     header: 'Un mail?',
-    subtitle: 'rrasnoveanu@yahoo.com',
+    subtitle: 'razvan_risnoveanu@yahoo.com',
     icon: 'emailIcon',
   },
 ];

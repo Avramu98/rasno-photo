@@ -43,8 +43,8 @@ const Footer = () => {
                     </Box>
                     <Box className='flex place-items-center gap-2'>
                         <AlternateEmailIcon className='text-contrast' fontSize='medium'/>
-                        <Mailto email="rrasnoveanu@yahoo.com" subject="Salut," body="Am găsit site-ul tău și ...">
-                            <Typography className='text-contrast font-poppins'>rrasnoveanu@yahoo.com</Typography>
+                        <Mailto email="razvan_risnoveanu@yahoo.com" subject="Salut," body="Am găsit site-ul tău și ...">
+                            <Typography className='text-contrast font-poppins'>razvan_risnoveanu@yahoo.com</Typography>
                         </Mailto>
                     </Box>
                 </Box>
