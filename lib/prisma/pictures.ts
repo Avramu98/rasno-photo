@@ -30,6 +30,9 @@ export async function getPicturesByCategory(page:any, limit:any, category:any) {
       where,
       skip: (page - 1) * limit,
       take: limit,
+      orderBy: [
+        { createdAt: 'desc' },
+      ],
     });
 
     return { picturesData: data };
