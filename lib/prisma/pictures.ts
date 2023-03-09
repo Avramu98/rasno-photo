@@ -42,6 +42,7 @@ export async function getPicturesByCategory(page:any, limit:any, category:any) {
 }
 
 export async function createPicture(imageUrl: string, title: string, description: string, category: CategoryName, imageSize: any) {
+  console.log('in create picture');
   try {
     const pictureFromDb = await prisma.picture.create({
       data: {
