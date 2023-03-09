@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import dynamic from 'next/dynamic';
 
 import Navbar from '@/components/shared/navbar/Navbar';

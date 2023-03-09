@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/legacy/image';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
 import { useMobileCheck } from '@/lib/hooks/useMobileCheck';
@@ -73,5 +73,6 @@ const CategoryPresentation = () => {
         </Swiper>
   );
 };
-
 export default CategoryPresentation;
+
+

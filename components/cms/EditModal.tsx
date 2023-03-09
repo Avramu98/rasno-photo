@@ -38,9 +38,9 @@ const EditModal = ({ picture, activeModal, closeModal }: ModalI) => {
         openSnackbar('Picture updated successfully!', SnackbarTypeI.SUCCESS);
         closeModal();
       });
-    } catch (err: any) {
-      openSnackbar(err, SnackbarTypeI.ERROR);
-      console.log(err);
+    } catch (res) {
+      // @ts-ignore
+      openSnackbar(res.response.data.message, SnackbarTypeI.ERROR);
     }
   };
 

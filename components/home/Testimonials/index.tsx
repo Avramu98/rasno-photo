@@ -1,5 +1,6 @@
 import React, { RefObject } from 'react';
-import { Box, Container } from '@mui/material';
+import Box from '@mui/material/Box';
+import  Container from '@mui/material/Container';
 import { SwiperSlide } from 'swiper/react';
 
 import { testimonialsData } from '@/lib/contants/landingPageContants';

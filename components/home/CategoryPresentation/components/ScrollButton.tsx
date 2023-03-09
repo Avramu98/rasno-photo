@@ -1,5 +1,6 @@
 import React, { RefObject } from 'react';
-import { Box, IconButton } from '@mui/material';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const ScrollButton = ({ specificScrollRef }: { specificScrollRef:RefObject<HTMLElement> }) => {
