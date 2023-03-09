@@ -12,11 +12,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (session && session?.user?.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
       const data = req.body;
       const { imageUrl, title, description, category } = data;
-      const imageSize = await probe(imageUrl);
-      const { error } = await createPicture(imageUrl, title, description, category, imageSize);
-      if (error) { // @ts-ignore
-        throw new Error(error);
-      }
+      await probe(imageUrl).then((probeResult) => {
+        createPicture(imageUrl, title, description, category, probeResult);
+      }).catch(error => {
+        return res.status(403).json({ message: error.message });
+      });
       const updatedData = await getPictures();
 
       return res.status(200).json({

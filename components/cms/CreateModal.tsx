@@ -29,12 +29,23 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
   const [uploadingStatus, setUploadingStatus] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const handleError = (err: { response: { data: { message: string; }; }; }) => {
+    setUploadingStatus(err.response.data.message);
+    setFile(null);
+    setIsLoading(false);
+    setUploadData((prevState => ({ ...prevState, title: '', description: '' })));
+    openSnackbar(err.response.data.message, SnackbarTypeI.ERROR);
+  };
+
   const handleUpdatedData = (value: string | CategoryName, type: FieldType) => {
     setUploadData((prevState) => ({ ...prevState, [type]: value }));
   };
 
   const selectFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) setFile(e.target.files[0]);
+    if (e.target.files) {
+      setUploadingStatus('File selected');
+      return setFile(e.target.files[0]);
+    }
   };
 
   const handleUpload = async () => {
@@ -42,44 +53,32 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
     const filePath = file?.name;
     try {
       // ----REQUEST TO S3 api PRISMA-----
-      await axios.post('../api/s3/upload-s3', {
-        filePath,
-        type: file?.type,
-      }).then(response => {
-        setIsLoading(true);
-        const url = response.data.url;
+      await axios.post('../api/s3/upload-s3', { filePath, type: file?.type })
+        .then(async response => {
+          setIsLoading(true);
+          // -----REQUEST TO S3 BUCKET-----
+          await axios.put(response.data.url, file, {
+            headers: { 'Content-type': file?.type, 'Access-Control-Allow-Origin': '*' },
+          }).catch(err => handleError(err));
 
-        // -----REQUEST TO S3 BUCKET-----
-        axios.put(url, file, {
-          headers: {
-            'Content-type': file?.type,
-            'Access-Control-Allow-Origin': '*',
-          },
+          // ------REQUEST TO CREATE PICTURE PRISMA------
+          await axios.post('./api/pictures/create-picture', {
+            imageUrl: `${BUCKET_URL}${filePath}`,
+            title: uploadData.title,
+            description: uploadData.description,
+            category: uploadData.category,
+          })
+            .then(function (res) {
+              setUploadingStatus('Done');
+              setIsLoading(false);
+              setFile(null);
+              mutate();
+              closeModal();
+              openSnackbar(res.data.message, SnackbarTypeI.SUCCESS);
+            });
         });
-
-        // ------REQUEST TO CREATE PICTURE PRISMA------
-        axios.post('./api/pictures/create-picture', {
-          imageUrl: `${BUCKET_URL}${filePath}`,
-          title: uploadData.title,
-          description: uploadData.description,
-          category: uploadData.category,
-        })
-          .then(function (res) {
-            setUploadingStatus('Done');
-            setIsLoading(false);
-            setFile(null);
-            mutate();
-            closeModal();
-            openSnackbar(res.data.message, SnackbarTypeI.SUCCESS);
-          });
-      });
-    } catch (res) {
-      setUploadingStatus("You don't have access to perform this request");
-      setFile(null);
-      setIsLoading(false);
-      setUploadData((prevState => ({ ...prevState, title: '', description: '' })));
-      // @ts-ignore
-      openSnackbar(res.response.data.message, SnackbarTypeI.ERROR);
+    } catch (res:any) {
+      handleError(res);
     }
   };
 
