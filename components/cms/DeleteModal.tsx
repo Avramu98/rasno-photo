@@ -20,8 +20,8 @@ const DeleteModal = ({ activeModal, picture, closeModal }: ModalI) => {
     }).then((res) => {
       openSnackbar(res.data.message, SnackbarTypeI.SUCCESS);
       mutate();
-    }).catch((err: any) => {
-      openSnackbar(err, SnackbarTypeI.ERROR);
+    }).catch((res) => {
+      openSnackbar(res.response.data.message, SnackbarTypeI.ERROR);
     });
 
   };

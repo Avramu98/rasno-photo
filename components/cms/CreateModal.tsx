@@ -27,6 +27,7 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
   });
   const [file, setFile] = useState<File | null>(null);
   const [uploadingStatus, setUploadingStatus] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleUpdatedData = (value: string | CategoryName, type: FieldType) => {
     setUploadData((prevState) => ({ ...prevState, [type]: value }));
@@ -39,34 +40,47 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
   const handleUpload = async () => {
     setUploadingStatus('Uploading the file to AWS S3');
     const filePath = file?.name;
-    let { data } = await axios.post('../api/s3/upload-s3', {
-      filePath,
-      type: file?.type,
-    });
+    try {
+      // ----REQUEST TO S3 api PRISMA-----
+      await axios.post('../api/s3/upload-s3', {
+        filePath,
+        type: file?.type,
+      }).then(response => {
+        setIsLoading(true);
+        const url = response.data.url;
 
-    const url = data.url;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let { data: newData } = await axios.put(url, file, {
-      headers: {
-        'Content-type': file?.type,
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
-    setFile(null);
+        // -----REQUEST TO S3 BUCKET-----
+        axios.put(url, file, {
+          headers: {
+            'Content-type': file?.type,
+            'Access-Control-Allow-Origin': '*',
+          },
+        });
 
-    axios.post('./api/pictures/create-picture', {
-      imageUrl: `${BUCKET_URL}${filePath}`,
-      title: uploadData.title,
-      description: uploadData.description,
-      category: uploadData.category,
-    })
-      .then(function (res) {
-        setUploadingStatus('Done');
-        mutate();
-        closeModal();
-        openSnackbar(res.data.message, SnackbarTypeI.SUCCESS);
+        // ------REQUEST TO CREATE PICTURE PRISMA------
+        axios.post('./api/pictures/create-picture', {
+          imageUrl: `${BUCKET_URL}${filePath}`,
+          title: uploadData.title,
+          description: uploadData.description,
+          category: uploadData.category,
+        })
+          .then(function (res) {
+            setUploadingStatus('Done');
+            setIsLoading(false);
+            setFile(null);
+            mutate();
+            closeModal();
+            openSnackbar(res.data.message, SnackbarTypeI.SUCCESS);
+          });
       });
-
+    } catch (res) {
+      setUploadingStatus("You don't have access to perform this request");
+      setFile(null);
+      setIsLoading(false);
+      setUploadData((prevState => ({ ...prevState, title: '', description: '' })));
+      // @ts-ignore
+      openSnackbar(res.response.data.message, SnackbarTypeI.ERROR);
+    }
   };
 
   return (
@@ -89,12 +103,12 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
 
                 {/*----------PICTURE-------*/}
                 <Box className='relative w-96 h-60'>
-                    {uploadingStatus &&
+
                         <Box className='grid justify-items-center'>
                             <Typography variant='h6'
                                         className='text-center'>{uploadingStatus}</Typography>
-                            <Default color='#FB8500'/>
-                        </Box>}
+                            {isLoading && <Default color='#FB8500'/>}
+                        </Box>
                 </Box>
                 {/*----------PICTURE-------*/}
 
@@ -102,7 +116,7 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={uploadData.category}
+                    value={uploadData?.category}
                     className='font-polaroid'
                     onChange={(e) => handleUpdatedData(e.target.value, FieldType.CATEGORY)}
                 >
@@ -136,13 +150,13 @@ const CreateModal = ({ activeModal, closeModal }: Pick<ModalI, 'activeModal' | '
                     <Button onClick={closeModal}
                             className='w-full border-accent rounded-bl-xl text-secondary hover:bg-accent-light'
                             variant='outlined'
-                            disabled={!!uploadingStatus}
+                            disabled={isLoading}
                             startIcon={<CancelIcon className='text-secondary' fontSize='large'/>}>CLOSE</Button>
                     <Button
                         onClick={handleUpload}
                         className='w-full border-accent rounded-br-xl text-secondary hover:bg-accent-light'
                         variant='outlined'
-                        disabled={!!uploadingStatus || !file}
+                        disabled={isLoading || !file}
                         endIcon={<CheckIcon className='text-secondary ' fontSize='large'/>}>Create</Button>
                 </Box>
                 {/*--------CTA-------*/}
