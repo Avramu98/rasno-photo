@@ -1,41 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped
-with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RasnoPH
 
-## Getting Started
+Welcome! This personal project offers a seamless experience for both photographers and users alike.
 
-First, run the development server:
+The platform is equipped with a user-friendly Content Management System (CMS) that allows photographers to easily upload, edit, and delete their content.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+For users, the website features a stunning landing page that includes a featured portfolio section, an "About" page that provides more information about the photographer and their work. A "Contact" page that allows users to get in touch with the photographer directly. A "Services" page where the photographer can showcase the services that he offers to the clients. In addition, the portfolio page is designed to showcase the photographer's best work, so that users can easily browse and find the photos that speak to them. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The website can be visited here <a href="https://www.rasno-photo.ro" target="_blank">Rasno Photography</a>
 
-You can start editing the page by modifying `pages/ModalWrapper.tsx`. The page auto-updates as you edit the file.
+## Table of Contents
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed
-on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited
-in `pages/api/hello.ts`.
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [License](#license)
+- [Contact](#contact)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated
-as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Technologies Used
 
-## Learn More
+<ul>
+  <li>NextJS - a popular React framework for building fast and scalable web applications.</li>
+  <li>Typescript - a typed superset of JavaScript that helps catch errors and improve code maintainability.</li>
+  <li>Tailwind CSS - a utility-first CSS framework that helps streamline the design process by providing pre-built styles and components.</li>
+  <li>Material UI - a popular React component library that provides a wide range of customizable and reusable UI components, making it easy to build beautiful and functional user interfaces.</li>
+  <li>S3 - Amazon's cloud storage service, used for efficient and scalable storage of files such as images and videos.</li>
+  <li>Prisma - a type-safe database ORM that makes it easy to interact with databases using a modern and intuitive API.</li>
+  <li>MongoDB - a NoSQL document database used for storing and managing structured data.</li>
 
-To learn more about Next.js, take a look at the following resources:
+</ul>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
+  <h4> Content Management System (CMS) for content upload, edit, and delete. </h4>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions
-are welcome!
+  <h4> Contains the following pages </h4>
+  <ul>
+  <li>Landing page with featured portfolio categories/testimonials/review </li>
+  <li>About page </li>
+  <li>Contact page -> Integrated WhatsApp and contact form that send email to the owner</li>
+  <li>Portfolio page -> Lazy loaded pictures with pagination via API </li>
+  <li>Services page </li>
+  </ul>
+  
+   <h4> Responsive design </h4>
+  <p>Website works pretty much on any resolution a key feature being the use of the user agent for mobile detection</p>
+  
+  <h4> S3 Integration </h4>
+  <p>Integrated with Amazon S3 to make managing and storing your files easier than ever before. With S3, you'll be able to easily upload and store all of your photos, videos, and other files directly from our website.</p>
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use
-the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+  <h4> SSR with API routes </h4>
+<p>Includes Server-Side Rendering (SSR) with API routes to help ensure fast and responsive performance. With our SSR setup, your website will load quickly and smoothly, even with a large portfolio or lots of content.</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  <h4> Dark/Light mode </h4>
+<p>Integrated using next/themes available in every page via navbar</p>
+
+ <h4> Animations </h4>
+<p>Framer motion was the core of the animations used in the app</p>
+
+ <h4> Contact form </h4>
+<p>Implemented using @emailjs/browser</p>
+
+## Screenshots
