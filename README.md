@@ -13,8 +13,6 @@ The website can be visited here <a href="https://www.rasno-photo.ro" target="_bl
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [Credits](#credits)
 - [License](#license)
 - [Contact](#contact)
 
@@ -63,3 +61,116 @@ The website can be visited here <a href="https://www.rasno-photo.ro" target="_bl
 <p>Implemented using @emailjs/browser</p>
 
 ## Screenshots
+
+<h3> Landing Page </h3>
+<table>
+  <tr>
+  <td>
+    <h4>Web</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226123651-64d2d369-d1b7-4603-8678-41ff1b85308b.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226123811-f7b5481e-a68e-4d86-8cb5-b1cb78e10a02.png">
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    <h4>Web</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226123917-29a76b0b-88aa-474b-890a-23c8f704c3d7.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226123945-8a7af1cc-abe5-4526-b481-29b57a401687.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226123958-a2cfcdd5-08df-4008-ae76-e54cce08fd63.png">
+  </td>
+  </tr>
+</table>
+
+<h3> Services Page </h3>
+<table>
+  <tr>
+  <td>
+    <h4>Web</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124254-000c8b35-19eb-4f71-905a-b542b3b7677b.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124278-09c80759-05f8-4590-8b9d-f4e2bbf5ddcd.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124293-dd913778-5ceb-4497-92e4-61baa8d67a19.png">
+  </td>
+  </tr>
+</table>
+
+<h3> Portfolio Page </h3>
+<table>
+  <tr>
+  <td>
+    <h4>Web</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124455-00fde233-285f-46a1-a8bd-f51ecc3a101a.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124478-79f9ca43-624f-4c53-b003-71666d2cdb81.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124484-47fb7680-68e8-48bd-842c-92c6a596f32d.png">
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <h4>Web lightbox preview</h4>
+      <img src="https://user-images.githubusercontent.com/49161699/226124538-74b5023e-cd0a-4c22-bef4-85d6b2d35bc0.png"
+    </td>
+  </tr>
+</table>
+
+<h3> About Page </h3>
+<table>
+  <tr>
+  <td>
+    <h4>Web</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124769-e90121a2-f22b-4720-9816-068346c74062.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226124924-81a93166-b363-419d-b0af-c87c087099f4.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226125081-314fb0d1-f16f-4266-957b-8736b18cf424.png">
+  </td>
+  </tr>
+</table>
+
+<h3> Contact Page </h3>
+<table>
+  <tr>
+  <td>
+    <h4>Web</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226125687-c131b2ae-bed5-4ad2-afa2-7b32f0f5a82b.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226125722-98f8e1a3-2bea-46ab-895e-c15188df3b03.png">
+  </td>
+  <td>
+    <h4>Mobile</h4>
+    <img src="https://user-images.githubusercontent.com/49161699/226125736-44c6fde4-9372-4325-9259-12dadbd7f72a.png">
+  </td>
+  </tr>
+</table>
+
+## License
+All rights reserved
+
+## Contact
+avram.vlad9@gmail.com
