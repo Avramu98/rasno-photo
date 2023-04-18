@@ -30,7 +30,6 @@ const fetcher = async () => {
   };
 };
 
-
 const Cms = () => {
   const { data, isLoading, mutate } = useSWR('/api/pictures/get-pictures', fetcher);
   const [currentPicture, setCurrentPicture] = useState<PictureI | null>(null);
