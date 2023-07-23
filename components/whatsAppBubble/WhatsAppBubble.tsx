@@ -6,7 +6,7 @@ const WhatsAppBubble = () => {
         <FloatingWhatsApp
             notification={true}
             avatar='/static/whatsAppAvatar.webp'
-            chatMessage={'Salut! 🤝 \nCu ce te pot ajuta?'}
+            chatMessage={'Hello! 🤝 \nHow can I help you?'}
             className='z-40'
             chatboxStyle={{ color: 'black' }}
             phoneNumber='+400734583628' accountName='Râșno'/>
