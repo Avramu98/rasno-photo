@@ -10,8 +10,8 @@ const ServicesPresentation = () => {
   return (
             <Container maxWidth='xl'>
                 <Box className='container'>
-                <AnimatedHeader text='Câteva detalii despre servicii'/>
-                <AnimatedSubheader moreStyles='w-fit md:w-1/2' text='Mai jos poți vedea care sunt zonele în care m-am perfecționat. Dar nu voi refuza un challenge!'/>
+                <AnimatedHeader text='Here are some details about the services that I offer.'/>
+                <AnimatedSubheader moreStyles='w-fit md:w-1/2' text="Below you can see the areas in which I have perfected my skills. But I won't refuse a challenge!"/>
 
                 {services.map((service) => (
                     <SingleService key={service.id} {...service}/>

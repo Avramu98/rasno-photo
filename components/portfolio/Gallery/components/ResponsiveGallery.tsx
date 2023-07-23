@@ -84,7 +84,7 @@ const ResponsiveGallery = ({ error, isLoadingInitialData, isValidating, pictures
             <div className='h-10 w-full h-20' ref={lastElementRef}/>
 
             {isReachingEnd ? (
-                <AnimatedHeader moreStyles='text-2xl' text='Din păcate ai ajuns la ultimele poze'/>
+                <AnimatedHeader moreStyles='text-2xl' text='Unfortunately, you have reached the last photos.'/>
             ) : (
                 <button
                     className='w-full text-center flex justify-center'

@@ -9,10 +9,9 @@ const Intro = () => {
   return (
             <Container maxWidth='lg'>
                 <Box className='container'>
-                    <AnimatedHeader moreStyles='pt-16' text='Dacă ai ajuns până aici înseamnă că te-am făcut curios și vrei să vezi mai multe'/>
-                    <AnimatedSubheader text='Haide să îți prezint o parte din munca mea de până acum. Dacă ți se pare interesant și pe placul tău
-                     ce fac poți să continui pe pagină următoare unde mă vei cunoaște și pe mine mai bine.'/>
-                    <AnimatedCta text='Despre' redirectLink='/about'/>
+                    <AnimatedHeader moreStyles='pt-16' text="If you've made it this far, it means I've piqued your curiosity, and you want to see more."/>
+                    <AnimatedSubheader text="Let me show you some of my work so far. If you find it interesting and to your liking, you can continue to the next page where you'll get to know me better."/>
+                    <AnimatedCta text='About' redirectLink='/about'/>
                 </Box>
             </Container>
   );

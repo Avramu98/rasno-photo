@@ -1,16 +1,13 @@
 export const workflowSteps = [
-  'Discuție: Ne putem întâlni la o cafea să ne cunoaștem și să vedem nevoile tale',
-  'Pre-producție: Planific și fac pregătirile necesare pentru ședința foto, cum ar fi verificarea echipamentului, locației și a planului de lumina',
-  'Ședința foto: Ne folosim de echipament și de tehnicile specifice al stilului dorit',
-  'Post-producție: Aici selectez cele mai bune imagini. Urmează un proces de editare și optimizare astfel încât să fie în concordanță cu stilul dorit',
-  'Livrare: Livrarea pozelor către client în format digital sau după nevoie',
-  'Feedback: Aici poți să-mi lași un feedback despre colaborarea noastră și putem discuta despre următoarele tale planuri'];
+  'Discussion: We can meet for a coffee to get to know each other and understand your needs',
+  'Pre-production: I plan and make the necessary preparations for the photoshoot, such as checking equipment, location, and lighting setup',
+  'Photoshoot: We use equipment and techniques specific to the desired style',
+  'Post-production: Here I select the best images. A process of editing and optimization follows to match the desired style',
+  'Delivery: Delivery of photos to the client in digital format or as needed',
+  'Feedback: Here you can leave me feedback about our collaboration, and we can discuss your future plans'];
 
 export const cameraDetails = [
-  'Folosesc un Nikon D750, este una dintre camerele cele mai populare printre fotografii amatori și profesioniști. Această camera DSLR cu o rezoluție de 24.3 megapixeli, oferă o calitate excepțională a imaginii și performanță excepțională și în condiții de lumina scăzută.',
-  `Pentru prelucrarea imaginilor, folosesc Adobe Lightroom, un  program puternic de gestionare și editare a fotografiilor. Lightroom îmi permite
-să organizez, editez și să optimizez imaginile, astfel încât să obțin rezultate de calitate.`,
-  `Pentru editarea detaliilor și retușarea imaginilor, folosesc Adobe Photoshop, un program de editare grafică. Acest software oferă o multitudine de
-instrumente și tehnici de editare, precum selecții precise, straturi, filtre și efecte,
-astfel să obținem rezultatul dorit.`,
+  'I use a Nikon D750, one of the most popular cameras among amateur and professional photographers. This DSLR camera with a 24.3-megapixel resolution offers exceptional image quality and outstanding performance even in low light conditions.',
+  'For image processing, I use Adobe Lightroom, a powerful program for managing and editing photographs. Lightroom allows me to organize, edit, and optimize images, resulting in quality outcomes.',
+  'For fine-tuning details and retouching images, I utilize Adobe Photoshop, a graphic editing program. This software offers a multitude of editing tools and techniques, such as precise selections, layers, filters, and effects, to achieve the desired results.',
 ];

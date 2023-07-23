@@ -23,7 +23,7 @@ const MainPage = () => {
             <Head>
                 <title>Rasno Photograpghy</title>
                 <meta name="description"
-                      content="Bine ați venit pe Rasno Photography! Sunt un fotograf talentat specializat în capturarea de imagini uimitoare într-o varietate de stiluri, incluzând Eveniment, Sessions, Natura, Street . Pasiunea mea pentru fotografie strălucește prin fiecare cadru pe care îl fac, și ma strădui să captez frumusețea și emoțiile din fiecare moment. Navigați prin portofoliul meu pentru a vedea munca mea și nu ezita sa faci o rezervare pentru o ședință foto"/>
+                      content="Welcome to Rasno Photography! I am a talented photographer specialized in capturing stunning images in a variety of styles, including Events, Sessions, Nature, and Street photography. My passion for photography shines through every frame I capture, and I strive to capture the beauty and emotions of each moment. Feel free to explore my portfolio to see my work, and don't hesitate to make a booking for a photo session."/>
             </Head>
             {/*-----Landing Part-----*/}
             <Box className='h-screen relative'>

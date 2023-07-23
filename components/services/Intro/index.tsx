@@ -9,9 +9,9 @@ const Intro = () => {
   return (
             <Container maxWidth='lg'>
                 <Box className='container'>
-                    <AnimatedHeader moreStyles='px-16 pt-16' text='Hai să-ți spun mai multe despre serviciile pe care le ofer.'/>
-                    <AnimatedSubheader text='Sunt un fotograf pasionat și ofer o varietate de servicii pentru a captura cele mai speciale momente. Indiferent dacă eșți în căutarea unor fotografii de majorat, ședințe foto sau a oricărui alt tip de fotografie, sunt aici pentru a-ți oferi cele mai bune servicii. Verifică portofoliul meu pentru a vedea mai multe despre fiecare categorie și dacă vei crede că ne potrivim, putem lucra împreună pentru a crea niște amintiri de durată.'/>
-                    <AnimatedCta text='Portofoliu' redirectLink='/portfolio'/>
+                    <AnimatedHeader moreStyles='px-16 pt-16' text='Let me tell you more about the services I offer.'/>
+                    <AnimatedSubheader text='I am a passionate photographer, offering a variety of services to capture the most special moments. Whether you are looking for graduation photos, photo sessions, or any other type of photography, I am here to provide you with the best services. Check out my portfolio to see more from each category, and if you feel we are a good fit, we can work together to create lasting memories.'/>
+                    <AnimatedCta text='Portfolio' redirectLink='/portfolio'/>
                 </Box>
             </Container>
   );

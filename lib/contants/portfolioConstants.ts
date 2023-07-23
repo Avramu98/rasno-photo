@@ -9,18 +9,18 @@ export interface CategoriesNavI {
 export const categoriesNav: CategoriesNavI[] = [
   {
     id: 0,
-    title: 'Toate',
+    title: 'All',
     categoryName: '',
   },
 
   {
     id: 1,
-    title: 'Natură',
+    title: 'Nature',
     categoryName: CategoryName.NATURE,
   },
   {
     id: 2,
-    title: 'Evenimente',
+    title: 'Events',
     categoryName: CategoryName.EVENTS,
   },
   {

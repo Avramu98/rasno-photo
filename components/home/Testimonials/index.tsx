@@ -12,8 +12,8 @@ import AnimatedSubheader from '@/components/shared/animatedTypography/AnimatedSu
 const Testimonials = ({ testimonialRef }: { testimonialRef:RefObject<HTMLElement> }) => {
   return (
         <Box ref={testimonialRef} className='container'>
-            <AnimatedHeader moreStyles='pt-6' text='Părerile unor clienți'/>
-            <AnimatedSubheader text='Bine ai venit pe site-ul meu de portofoliu. Sunt fericit să-ți arăt munca mea și cum pot captura momentele unice prin intermediul aparatului meu foto. Mai jos poți vedea feedback-ul clienților anteriori. Navighează și inspiră-te pentru următorul tău proiect sau eveniment special.'/>
+            <AnimatedHeader moreStyles='pt-6' text='Customer Reviews'/>
+            <AnimatedSubheader text='Welcome to my portfolio website. I am thrilled to showcase my work and how I can capture unique moments through my camera. Below, you can find feedback from my previous clients. Browse and get inspired for your next project or special event.'/>
 
             {/*------TESTIMONIALS CARDS-----*/}
                 <Container maxWidth='lg'>

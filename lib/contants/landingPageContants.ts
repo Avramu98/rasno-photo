@@ -5,22 +5,22 @@ import { CategoryItemsI, NavigationItemsI, TestimonialDataI } from '../../types/
 export const navigationItems: NavigationItemsI[] = [
   {
     id: 1,
-    name: 'Acasă',
+    name: 'Home',
     redirectTo: '/',
   },
   {
     id: 2,
-    name: 'Servicii',
+    name: 'Services',
     redirectTo: '/services',
   },
   {
     id: 3,
-    name: 'Portofoliu',
+    name: 'Portfolio',
     redirectTo: '/portfolio',
   },
   {
     id: 4,
-    name: 'Despre',
+    name: 'About',
     redirectTo: '/about',
   },
   {
@@ -45,7 +45,7 @@ export const categoryItems: CategoryItemsI[] = [
     picture: {
       landscape: '/static/nature-landscape.jpg',
     },
-    title: 'Natură',
+    title: 'Nature',
     categoryName: CategoryName.NATURE,
   },
   {
@@ -62,7 +62,7 @@ export const categoryItems: CategoryItemsI[] = [
     picture: {
       landscape: '/static/event-landscape.webp',
     },
-    title: 'Evenimente',
+    title: 'Events',
     categoryName: CategoryName.EVENTS,
   },
 ];
@@ -70,32 +70,32 @@ export const categoryItems: CategoryItemsI[] = [
 export const testimonialsData: TestimonialDataI[] = [
   {
     id: 1,
-    message: 'Am lucrat împreună timp de 5 ani și încă continuăm colaborarea. Un fotograf foarte pasionat. De fiecare dată a fost foarte proactiv în legătură cu cerințele proiectului în care lucra. Foarte adaptabil, profesionist, prompt și capabil pentru volum.',
+    message: 'We have worked together for 5 years, and we still continue our collaboration. He is a very passionate photographer. Every time, he has been extremely proactive regarding the project requirements. He is highly adaptable, professional, prompt, and capable of handling a large volume of work.',
     name: 'Tanțoș Mihai',
   },
   {
     id: 2,
-    message: 'Râșno a făcut o treabă excelentă cu pozele de la cununia noastră. Ne-a prins emoțiile într-un mod natural și am fost foarte mulțumiți de rezultat. Îl recomandăm cu încredere tuturor celor care caută un fotograf talentat.',
+    message: 'Râșno did an excellent job with the photos from our wedding. He captured our emotions in a natural way, and we were extremely pleased with the results. We wholeheartedly recommend him to anyone in search of a talented photographer.',
     name: 'Avram Vlad',
   },
   {
     id: 3,
-    message: 'Pozele sunt făcute într-un mod exemplar și foarte pe placul meu. Totul a mers perfect, pozele sunt foarte frumoase.',
+    message: 'The photos are done in an exemplary manner and are very much to my liking. Everything went perfectly, and the pictures are exceptionally beautiful.',
     name: 'Aurora Crețan',
   },
   {
     id: 4,
-    message: 'Un fotograf de excepție care da dovadă de profesionalism! Tratează fiecare ședința cu seriozitate și este foarte bun în ceea ce face.',
+    message: 'An exceptional photographer who demonstrates professionalism! He approaches every session with seriousness and is highly skilled at what he does.',
     name: 'Bogdan Mitrache',
   },
   {
     id: 5,
-    message: 'Țin să îți mulțumesc mult pentru poze, sunt super. Cu siguranță vom mai colabora.',
+    message: 'I want to thank you very much for the photos, they are great. We will definitely collaborate again.',
     name: 'Victor Necșoiu',
   },
   {
     id: 6,
-    message: 'Un fotograf bun cu idei inventive care trimite pozele la timp și într-un mod exemplar.',
+    message: 'A good photographer with inventive ideas who delivers the photos on time and in an exemplary manner',
     name: 'Cosmin Albu',
   },
 ];

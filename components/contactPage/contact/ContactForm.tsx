@@ -58,19 +58,19 @@ const ContactForm = () => {
     const nameRegex = /^[a-zA-Z\s]+$/;
 
     if (!emailRegex.test(email.value) && email.isTouched) {
-      handleErrors('Introdu un email valid !', FormFieldType.EMAIL);
+      handleErrors('Add a valid mail !', FormFieldType.EMAIL);
     } else {
       handleErrors('clearError', FormFieldType.EMAIL);
     }
 
     if (!nameRegex.test(name.value) && name.isTouched) {
-      handleErrors('Introdu un nume valid !', FormFieldType.NAME);
+      handleErrors('Add a valid name !', FormFieldType.NAME);
     } else {
       handleErrors('clearError', FormFieldType.NAME);
     }
 
     if (message.value.length < 10 && message.isTouched) {
-      handleErrors('Introdu minim 10 caractere !', FormFieldType.MESSAGE);
+      handleErrors('Min 10 characters !', FormFieldType.MESSAGE);
     } else {
       handleErrors('clearError', FormFieldType.MESSAGE);
     }
@@ -96,7 +96,7 @@ const ContactForm = () => {
     send('service_b4wrder', 'template_l2qj5w5', templateParams, 'jDbxJS2Dipc03OI0G').then(() => {
       setFormData(formInitialState);
       setIsLoading(false);
-      openSnackbar('Mesaj trimis cu succes!', SnackbarTypeI.SUCCESS);
+      openSnackbar('Sent successfully!', SnackbarTypeI.SUCCESS);
     }).catch(err => {
       setIsLoading(false);
       openSnackbar(err, SnackbarTypeI.ERROR);
@@ -119,7 +119,7 @@ const ContactForm = () => {
                         id="outlined-required"
                         error={formData.name.errors.size !== 0}
                         value={formData.name.value}
-                        label="Nume*"
+                        label="Name*"
                         onChange={(e) => handleFormData(e.target.value, FormFieldType.NAME)}
                     />
                 </div>
@@ -143,7 +143,7 @@ const ContactForm = () => {
                         className='error-text'>{formData.message.errors}</Typography>
                     <CssTextField
                         id="outlined-required"
-                        label="Mesaj*"
+                        label="Message*"
                         value={formData.message.value}
                         className='font-poppins w-full'
                         error={formData.message.errors.size !== 0}
@@ -154,7 +154,7 @@ const ContactForm = () => {
 
                 <Button onClick={() => handleSendEmail()} disabled={hasErrorsAndValues()}
                         className='font-prompt font-bold'
-                        variant='outlined'>Trimite</Button>
+                        variant='outlined'>Send</Button>
             </FormControl>
             {loading && <OverlayLoader/>}
         </Box>

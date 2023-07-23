@@ -14,9 +14,8 @@ const ContactInformation = () => {
                 <Box className='container'>
 
                 {/*-------HEADER----*/}
-                <AnimatedHeader moreStyles='pt-10' text='Hai să stăm de vorbă!'/>
-               <AnimatedSubheader text='Povestește-mi despre viziunea ta și obiectivele tale, pot fi un partener de încredere în
-                    realizarea acestora prin intermediul fotografiei.'/>
+                <AnimatedHeader moreStyles='pt-10' text="Let's have a chat!"/>
+               <AnimatedSubheader text='Tell me about your vision and goals, and I can be a reliable partner in achieving them through photography.'/>
              
 
                 {/*------CONTACT DATA-----*/}

@@ -10,9 +10,9 @@ const Review = () => {
   return (
             <Container maxWidth='md'>
                 <Box className='container'>
-                    <AnimatedHeader text='Aici poți să îți spui cuvântul'/>
-                    <AnimatedSubheader text='Mulțumesc că ai ales să colaborăm împreună și sper că a decurs totul așa cum te așteptai. Dacă ești mulțumit sau mulțumită de serviciile mele și nu este prea mare deranjul, poți să îmi lași un review pe Facebook apăsând pe butonul de mai jos,  pentru a mă ajuta să îmi îmbunătățesc serviciile și să îmi mențin clienții fericiți. Mulțumesc din nou că ai apelat la serviciile mele și ai avut încredere!'/>
-                    <AnimatedCta text='Lasă un review' redirectLink='https://www.facebook.com/profile.php?id=100062974131967&sk=reviews'/>
+                    <AnimatedHeader text='Here you can have your say'/>
+                    <AnimatedSubheader text="Thank you for choosing to collaborate with me, and I hope everything met your expectations. If you are satisfied with my services and wouldn't mind, you can leave a review on Facebook by clicking the button below to help me improve my services and keep my clients happy. Thanks again for using my services and for your trust!"/>
+                    <AnimatedCta text='Leave a review' redirectLink='https://www.facebook.com/profile.php?id=100062974131967&sk=reviews'/>
                 <Typography className='header py-16'>Thank you! :)</Typography>
                 </Box>
             </Container>
